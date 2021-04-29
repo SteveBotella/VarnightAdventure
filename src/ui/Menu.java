@@ -35,11 +35,11 @@ public class Menu {
             System.out.println("            1 (Numpad)      2 (Numpad)             ");
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 1) {
-                Warrior warrior = new Warrior();
+                Warrior warriorP1 = new Warrior();
                 System.out.println("     Choose a name that feel Heroic, with muscles & Raaaaaage !!!               ");
                 System.out.println("     (PS : No... DarkSasukeDu69 is not Skilled... But Varnight...)              ");
                 System.out.println("     (Any way, take the name you want... But Varnight...)                       ");
-                warrior.setName(this.controllerChoiceString = sc.next());
+                warriorP1.setName(this.controllerChoiceString = sc.next());
                 if (controllerChoiceString != "") {
                     Utils.storyText("Once upon a time, in a Far far away Kingdom of peace & love,",
                                     "Lived a Strong, Proud & Honorable Family !" );
@@ -59,20 +59,20 @@ public class Menu {
                     System.out.println("     And here he comes ! Today is a great day to raid Dungeons & burn Villages !");
                     System.out.println("     Here comes... The WARRIOR !!!                                              ");
                     System.out.println("     We call him :                                                              ");
-                    System.out.println("               --- " + warrior.getName() + " !!! ---                            ");
+                    System.out.println("               --- " + warriorP1.getName() + " !!! ---                            ");
                 }
                 System.out.println("     (Now you can use the 9 Numpad input to display your Character Sheet         ");
                 System.out.println("     (Try it now : )                                                             ");
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 9) {
-                    warrior.characterSheet();
+                    warriorP1.characterSheet();
                 }
             } else if (controllerChoiceInt == 2) {
-                Mage mage = new Mage();
+                Mage mageP1 = new Mage();
                 System.out.println("     Choose a name that feel Magic, with brains & Spirit !!!               ");
                 System.out.println("     (PS : No... DarkSasukeDu69 is not Skilled... But Varmagus...)              ");
                 System.out.println("     (Any way, take the name you want... But Varmagus...)                       ");
-                mage.setName(this.controllerChoiceString = sc.next());
+                mageP1.setName(this.controllerChoiceString = sc.next());
                 if (controllerChoiceString != "") {
                     Utils.storyText("Once upon a time, in a Far far away Kingdom of peace & love,",
                                     "Lived a Clever, Virtuous & Noble Family !" );
@@ -92,13 +92,13 @@ public class Menu {
                     System.out.println("     And here he comes ! Today is a great day to spell Love Filter & summon Deamons !");
                     System.out.println("     Here comes... The Mage !!!                                              ");
                     System.out.println("     We call him :                                                              ");
-                    System.out.println("               --- " + mage.getName() + " !!! ---                            ");
+                    System.out.println("               --- " + mageP1.getName() + " !!! ---                            ");
                 }
                 System.out.println("     (Now you can use the 9 Numpad input to display your Character Sheet         ");
                 System.out.println("     (Try it now : )                                                             ");
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 9) {
-                    mage.characterSheet();
+                    mageP1.characterSheet();
                 }
             }
         } if (controllerChoiceInt == 2){
