@@ -10,13 +10,17 @@ public class Mage {
     String filter = "Empty Slot";
 
     public void characterSheet() {
-        System.out.println("     --- Mage ---     ");
+        System.out.println("     ---   Mage  ---     ");
+        System.out.println("            *            ");
+        System.out.println("            /\\           ");
+        System.out.println("          _/__\\_         ");
         System.out.println("  Name : " + this.name);
         System.out.println("  HP : " + this.hp);
         System.out.println("  AP : " + this.ap);
-        System.out.println("     ---   ---  ---      ");
+        System.out.println("     ---   ---   ---      ");
         System.out.println("  Spell : " + this.spell);
         System.out.println("  Filter : " + this.filter);
+        System.out.println("     ---------------     ");
     }
 
 

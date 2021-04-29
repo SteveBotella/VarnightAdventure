@@ -11,12 +11,16 @@ public class Warrior {
 
     public void characterSheet() {
         System.out.println("     --- Warrior ---     ");
+        System.out.println("                         ");
+        System.out.println("       O==|=======>      ");
+        System.out.println("                         ");
         System.out.println("  Name : " + this.name);
         System.out.println("  HP : " + this.hp);
         System.out.println("  AP : " + this.ap);
-        System.out.println("     ---   ---  ---      ");
+        System.out.println("     ---   ---   ---       ");
         System.out.println("  Weapon : " + this.weapon);
         System.out.println("  Shield : " + this.shield);
+        System.out.println("     ---------------     ");
     }
 
 
