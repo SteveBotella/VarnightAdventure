@@ -100,7 +100,6 @@ public class Menu {
                 if (controllerChoiceInt == 9) {
                     mage.characterSheet();
                 }
-
             }
         } if (controllerChoiceInt == 2){
             System.out.println("                     Quit Game                     ");
