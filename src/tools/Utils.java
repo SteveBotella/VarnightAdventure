@@ -2,15 +2,19 @@ package tools;
 
 public class Utils {
 
-    // Call a loading event for "x" secondes
-    public static void waitSec(int second) {
+    // Call a loading event for "x" secondes and enable/disable "Loading" & dots
+    public static void waitSec(int second, boolean loading, boolean dot) {
         try
         {
             System.out.println();
-            System.out.print("Loading ");
+            if (loading) {
+                System.out.print("Loading ");
+            }
             for (int i = 0; i < second; i++) {;
                 Thread.sleep(1000);
-                System.out.print(". ");
+                if (dot) {
+                    System.out.print(". ");
+                }
             }
             System.out.println();
             System.out.println();

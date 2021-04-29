@@ -1,10 +1,8 @@
 package ui;
 
-import actors.Character;
-import tools.Utils;
 import actors.Mage;
 import actors.Warrior;
-import com.steve.Main;
+import tools.Utils;
 
 import java.util.Scanner;
 
@@ -20,7 +18,7 @@ public class Menu {
         System.out.println("   | |_u_u_u_WELCOME TO VARNIGHT ADVENTURE_u_u_u_| |   ");
         System.out.println("   |_|_________________|[-|-]|___________________|_|   ");
         System.out.println("                        |   |                          ");
-        Utils.waitSec(3);
+        Utils.waitSec(3, true, true);
         System.out.println("      ------------------------       -----------       ");
         System.out.println("     | Create a New Character |     | Quit Game |      ");
         System.out.println("      ------------------------       -----------       ");
@@ -28,7 +26,7 @@ public class Menu {
         this.controllerChoiceInt = sc.nextInt();
         System.out.println();
         if (controllerChoiceInt == 1) {
-            Utils.waitSec(1);
+            Utils.waitSec(1, false, false);
             System.out.println("            --- Character Creation ---             ");
             System.out.println("                 Choose a class :                  ");
             System.out.println("             ---------       --------              ");

@@ -1,21 +1,38 @@
 package actors;
 
-import tools.Utils;
-
 public abstract class Character {
     String archetype = "Peasant";
-    String name = "Name";
+    String name = "Enguerand";
     int hp = 1;
     int maxHp = 1;
     int ap = 1;
     int maxAp = 1;
+    String skillOne = "Bare Hands";
+    String skillTwo = "Empty Slot";
+    String skillThree = "Empty Slot";
+    String skillFour = "Empty Slot";
 
     public void characterSheet() {
         System.out.println("     --- " + archetype + " ---     ");
-        tools.Utils.logoPeasant();
+        switch (archetype) {
+            case "Peasant":
+                tools.Utils.logoPeasant();
+                break;
+            case "Warrior":
+                tools.Utils.logoWarrior();
+                break;
+            case "Mage":
+                tools.Utils.logoMage();
+                break;
+        }
         System.out.println("  Name : " + this.name);
         System.out.println("  HP : " + this.hp);
         System.out.println("  AP : " + this.ap);
+        System.out.println("     ---------------     ");
+        System.out.println("  Slot1 : " + this.skillOne);
+        System.out.println("  Slot2 : " + this.skillTwo);
+        System.out.println("  Slot3 : " + this.skillThree);
+        System.out.println("  Slot4 : " + this.skillFour);
         System.out.println("     ---------------     ");
     }
 
@@ -67,4 +84,35 @@ public abstract class Character {
         this.maxAp = maxAp;
     }
 
+    public String getSkillOne() {
+        return skillOne;
+    }
+
+    public void setSkillOne(String skillOne) {
+        this.skillOne = skillOne;
+    }
+
+    public String getSkillTwo() {
+        return skillTwo;
+    }
+
+    public void setSkillTwo(String skillTwo) {
+        this.skillTwo = skillTwo;
+    }
+
+    public String getSkillThree() {
+        return skillThree;
+    }
+
+    public void setSkillThree(String skillThree) {
+        this.skillThree = skillThree;
+    }
+
+    public String getSkillFour() {
+        return skillFour;
+    }
+
+    public void setSkillFour(String skillFour) {
+        this.skillFour = skillFour;
+    }
 }
