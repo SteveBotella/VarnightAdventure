@@ -1,5 +1,6 @@
 package ui;
 
+import actors.Character;
 import tools.Utils;
 import actors.Mage;
 import actors.Warrior;

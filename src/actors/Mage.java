@@ -1,28 +1,9 @@
 package actors;
 
-public class Mage {
-    String name = "Name";
-    int hp = 3;
-    int maxHp = 6;
-    int ap = 8;
-    int maxAp = 15;
+public class Mage extends Character {
+
     String spell = "Bare Hands";
     String filter = "Empty Slot";
-
-    public void characterSheet() {
-        System.out.println("     ---   Mage  ---     ");
-        System.out.println("            *            ");
-        System.out.println("            /\\           ");
-        System.out.println("          _/__\\_         ");
-        System.out.println("  Name : " + this.name);
-        System.out.println("  HP : " + this.hp);
-        System.out.println("  AP : " + this.ap);
-        System.out.println("     ---   ---   ---      ");
-        System.out.println("  Spell : " + this.spell);
-        System.out.println("  Filter : " + this.filter);
-        System.out.println("     ---------------     ");
-    }
-
 
     public String getName() {
         return this.name;

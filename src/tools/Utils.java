@@ -29,4 +29,25 @@ public class Utils {
         System.out.println("             ----------                                                      ");
         System.out.println("             0 (Numpad)                                                      ");
     }
+
+    public static void logoPeasant() {
+        System.out.println("           / /           ");
+        System.out.println("            /\\/         ");
+        System.out.println("           /             ");
+        System.out.println("     ---------------     ");
+    }
+
+    public static void logoWarrior() {
+        System.out.println("                         ");
+        System.out.println("       O==|=======>      ");
+        System.out.println("                         ");
+        System.out.println("     ---------------     ");
+    }
+
+    public static void logoMage() {
+        System.out.println("            *            ");
+        System.out.println("            /\\          ");
+        System.out.println("          _/__\\_        ");
+        System.out.println("     ---------------     ");
+    }
 }

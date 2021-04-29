@@ -1,67 +1,57 @@
 package actors;
 
-public class Warrior {
-    String name = "Name";
-    int hp = 5;
-    int maxHp = 10;
-    int ap = 5;
-    int maxAp = 10;
+public class Warrior extends Character {
     String weapon = "Bare Hands";
     String shield = "Empty Slot";
 
-    public void characterSheet() {
-        System.out.println("     --- Warrior ---     ");
-        System.out.println("                         ");
-        System.out.println("       O==|=======>      ");
-        System.out.println("                         ");
-        System.out.println("  Name : " + this.name);
-        System.out.println("  HP : " + this.hp);
-        System.out.println("  AP : " + this.ap);
-        System.out.println("     ---   ---   ---       ");
-        System.out.println("  Weapon : " + this.weapon);
-        System.out.println("  Shield : " + this.shield);
-        System.out.println("     ---------------     ");
+    public Warrior() {
+        this.name = getName();
+        setArchetype("Warrior");
     }
 
-
-    public String getName() {
-        return this.name;
+    @Override
+    public String getArchetype() {
+        return this.archetype;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @Override
     public int getHp() {
-        return hp;
+        return 5;
     }
 
+    @Override
     public void setHp(int hp) {
-        this.hp = hp;
+
     }
 
+    @Override
     public int getMaxHp() {
-        return maxHp;
+        return 10;
     }
 
+    @Override
     public void setMaxHp(int maxHp) {
-        this.maxHp = maxHp;
+
     }
 
+    @Override
     public int getAp() {
-        return ap;
+        return 5;
     }
 
+    @Override
     public void setAp(int ap) {
-        this.ap = ap;
+
     }
 
+    @Override
     public int getMaxAp() {
-        return maxAp;
+        return 10;
     }
 
+    @Override
     public void setMaxAp(int maxAp) {
-        this.maxAp = maxAp;
+
     }
 
     public String getWeapon() {
