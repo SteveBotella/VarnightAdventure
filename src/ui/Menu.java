@@ -20,17 +20,18 @@ public class Menu {
         System.out.println("                        |   |                          ");
         Utils.waitSec(3, true, true);
         createCharacter();
-        if (controllerChoiceInt == 2){
+        if (controllerChoiceInt == 2) {
             tools.Utils.exitGame();
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 1) {
                 System.exit(0);
-            } else if (controllerChoiceInt == 2){
+            } else if (controllerChoiceInt == 2) {
                 createCharacter();
             }
         }
     }
 
+    // Character Creation Menu
     public void createCharacter() {
         System.out.println("      ------------------------       -----------       ");
         System.out.println("     | Create a New Character |     | Quit Game |      ");
@@ -55,17 +56,17 @@ public class Menu {
                 warriorP1.setName(this.controllerChoiceString = sc.next());
                 if (controllerChoiceString != "") {
                     Utils.storyText("Once upon a time, in a Far far away Kingdom of peace & love,",
-                            "Lived a Strong, Proud & Honorable Family !" );
+                            "Lived a Strong, Proud & Honorable Family !");
                 }
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 0) {
                     Utils.storyText("They worked hard on day and enjoy their life at night...",
-                            "So... One day comes a new born" );
+                            "So... One day comes a new born");
                 }
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 0) {
                     Utils.storyText("Likes his Dad he was Proud, likes his Mother he was Strong !",
-                            "Likes his family, he was Honorable..." );
+                            "Likes his family, he was Honorable...");
                 }
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 0) {
@@ -88,17 +89,17 @@ public class Menu {
                 mageP1.setName(this.controllerChoiceString = sc.next());
                 if (controllerChoiceString != "") {
                     Utils.storyText("Once upon a time, in a Far far away Kingdom of peace & love,",
-                            "Lived a Clever, Virtuous & Noble Family !" );
+                            "Lived a Clever, Virtuous & Noble Family !");
                 }
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 0) {
                     Utils.storyText("They learn all about magic on day and enjoy their life at night...",
-                            "So... One day comes a new born" );
+                            "So... One day comes a new born");
                 }
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 0) {
                     Utils.storyText("Likes his Dad he was Virtuous, likes his Mother he was Clever !",
-                            "Likes his family, he was Noble..." );
+                            "Likes his family, he was Noble...");
                 }
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 0) {
