@@ -1,6 +1,10 @@
 package actors;
 
-public abstract class Character {
+import tools.Utils;
+
+public class Character {
+    Utils utils = new Utils();
+
     String archetype = "Peasant";
     String name = "Enguerand";
     int hp = 1;
@@ -16,13 +20,13 @@ public abstract class Character {
         System.out.println("     --- " + archetype + " ---     ");
         switch (archetype) {
             case "Peasant":
-                tools.Utils.logoPeasant();
+                utils.logoPeasant();
                 break;
             case "Warrior":
-                tools.Utils.logoWarrior();
+                utils.logoWarrior();
                 break;
             case "Mage":
-                tools.Utils.logoMage();
+                utils.logoMage();
                 break;
         }
         System.out.println("  Name : " + this.name);
