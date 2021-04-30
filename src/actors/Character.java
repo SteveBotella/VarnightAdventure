@@ -15,6 +15,7 @@ public class Character {
     String skillTwo = "Empty Slot";
     String skillThree = "Empty Slot";
     String skillFour = "Empty Slot";
+    int worldLocation = 0;
 
     public void characterSheet() {
         System.out.println("     --- " + archetype + " ---     ");
@@ -118,5 +119,13 @@ public class Character {
 
     public void setSkillFour(String skillFour) {
         this.skillFour = skillFour;
+    }
+
+    public int getWorldLocation() {
+        return worldLocation;
+    }
+
+    public void setWorldLocation(int worldLocation) {
+        this.worldLocation = worldLocation;
     }
 }

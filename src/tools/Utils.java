@@ -68,6 +68,15 @@ public class Utils {
         System.out.println("     ---------------     ");
     }
 
+    // Ask rolling dice
+    public void askToRoll() {
+        System.out.println("      Your turn to roll the dice...            ");
+        System.out.println("             ----------                                                      ");
+        System.out.println("            |   Roll > |                                                     ");
+        System.out.println("             ----------                                                      ");
+        System.out.println("             0 (Numpad)                                                      ");
+    }
+
     // Roll dice 6
     public void rollDice() {
         int dice = (int)(Math.random()*6+1);

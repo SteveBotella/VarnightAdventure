@@ -89,12 +89,7 @@ public class Menu {
                     System.out.println("     We call him :                                                              ");
                     System.out.println("               --- " + player1.getName() + " !!! ---                            ");
                 }
-                System.out.println("     (Now you can use the 9 Numpad input to display your Character Sheet         ");
-                System.out.println("     (Try it now : )                                                             ");
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 9) {
-                    player1.characterSheet();
-                }
+
             } else if (controllerChoiceInt == 2) {
                 player1 = new Mage();
                 System.out.println("     Choose a name that feel Magic, with brains & Spirit !!!               ");
@@ -122,12 +117,13 @@ public class Menu {
                     System.out.println("     We call him :                                                              ");
                     System.out.println("               --- " + player1.getName() + " !!! ---                            ");
                 }
-                System.out.println("     (Now you can use the 9 Numpad input to display your Character Sheet         ");
-                System.out.println("     (Try it now : )                                                             ");
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 9) {
-                    player1.characterSheet();
-                }
+            }
+
+            System.out.println("     (Now you can use the 9 Numpad input to display your Character Sheet         ");
+            System.out.println("     (Try it now : )                                                             ");
+            this.controllerChoiceInt = sc.nextInt();
+            if (controllerChoiceInt == 9) {
+                player1.characterSheet();
             }
         }
     }
