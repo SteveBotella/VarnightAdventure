@@ -102,8 +102,12 @@ public class Menu {
                 }
             }
         } if (controllerChoiceInt == 2){
-            System.out.println("                     Quit Game                     ");
-            System.exit(0);
+            tools.Utils.exitGame();
+            this.controllerChoiceInt = sc.nextInt();
+            if (controllerChoiceInt == 1) {
+                System.exit(0);
+            } else if (controllerChoiceInt == 2){
+            }
         }
     }
 }
