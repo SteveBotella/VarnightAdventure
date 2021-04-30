@@ -8,7 +8,7 @@ public class Utils {
         System.out.println("             ----------                          ----------                  ");
         System.out.println("            |   Yes  > |                        |   No   > |                 ");
         System.out.println("             ----------                          ----------                  ");
-        System.out.println("             0 (Numpad)                          1 (Numpad)                  ");
+        System.out.println("             1 (Numpad)                          2 (Numpad)                  ");
     }
 
     // Call a loading event for "x" secondes and enable/disable "Loading" & dots
