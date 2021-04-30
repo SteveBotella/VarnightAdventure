@@ -77,10 +77,14 @@ public class Utils {
         System.out.println("             0 (Numpad)                                                      ");
     }
 
-    // Roll dice 6
-    public void rollDice() {
-        int dice = (int)(Math.random()*6+1);
-        System.out.println("Dice roll... " + dice + " !");
+    // Roll dice "x" Faces
+    public int rollDice(int face) {
+        int dice = (int)(Math.random()*face+1);
+        System.out.println("Dice " + face + " roll... " + dice + " !");
+        System.out.println("             ----------                                                      ");
+        System.out.println("            |   Next > |                                                     ");
+        System.out.println("             ----------                                                      ");
+        System.out.println("             0 (Numpad)                                                      ");
+        return dice;
     }
 }
-
