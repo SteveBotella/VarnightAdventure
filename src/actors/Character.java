@@ -9,14 +9,14 @@ public class Character {
 
     String archetype = "Peasant";
     String name = "Enguerand";
-    int hp = 1;
-    int maxHp = 1;
+    int hp = 10;
+    int maxHp = 10;
     int ap = 1;
     int maxAp = 1;
-    String skillOne = "Bare Hands";
-    String skillTwo = "Empty Slot";
-    String skillThree = "Empty Slot";
-    String skillFour = "Empty Slot";
+    String skillOne = "Fatal Fourche";
+    String skillTwo = "Wheelbarrow throw";
+    String skillThree = "Nuage de fumier";
+    String skillFour = "Witch Hunt";
     int worldLocation = 0;
 
     public String getArchetype() {

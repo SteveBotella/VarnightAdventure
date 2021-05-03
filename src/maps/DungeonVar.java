@@ -102,11 +102,12 @@ public class DungeonVar {
             }
             controllerChoiceInt = 999;
 
+            //TODO Add more situation to this switch
             switch (player1.getWorldLocation()) {
                 default:
-                    setRoomArchetype("Corridor");
+                    setRoomArchetype("Enemy");
                     Character enemy1 = new Character();
-                    room.fight(player1, enemy1);
+                    room.room(player1, enemy1, this);
             }
         }
 

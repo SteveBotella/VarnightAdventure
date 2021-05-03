@@ -39,27 +39,27 @@ public class Room {
             this.skillChoice = sc.nextInt();
             switch (skillChoice) {
                 case 1 :
-                    System.out.println(player + " use " + player.getSkillOne());
+                    System.out.println(player.getName() + " use " + player.getSkillOne());
                     break;
                 case 2 :
-                    System.out.println(player + " use " + player.getSkillTwo());
+                    System.out.println(player.getName() + " use " + player.getSkillTwo());
                     break;
                 case 3 :
-                    System.out.println(player + " use " + player.getSkillThree());
+                    System.out.println(player.getName() + " use " + player.getSkillThree());
                     break;
                 case 4 :
-                    System.out.println(player + " use " + player.getSkillFour());
+                    System.out.println(player.getName() + " use " + player.getSkillFour());
                     break;
             }
-            System.out.println(player + " attack " + " and deal " + player.getAp() + " to " + enemy);
+            System.out.println(player.getName() + " attack " + " and deal " + player.getAp() + " to " + enemy.getName());
             enemy.setHp(enemy.getHp() - player.getAp());
             characterSheet.characterSheet(enemy);
             System.out.println("Versus");
             characterSheet.characterSheet(player);
             if (enemy.getHp() <= 0) {
-                System.out.println(player + " win the fight !");
+                System.out.println(player.getName() + " win the fight !");
             } else {
-                System.out.println(enemy + " attack " + " and deal " + enemy.getAp() + " to " + player);
+                System.out.println(enemy.getName() + " attack " + " and deal " + enemy.getAp() + " to " + player.getName());
                 player.setHp(player.getHp() - enemy.getAp());
                 System.out.println("End Turn " + turn);
                 turn++;
