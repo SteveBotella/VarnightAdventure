@@ -14,7 +14,7 @@ public class DungeonVar {
     int controllerChoiceInt = 999;
     String controllerChoiceString = "";
 
-    int N = 64;
+    int N = 63;
     Object[] room = new Object[N];
 
     public void gameStart(Character player1) {
@@ -58,11 +58,11 @@ public class DungeonVar {
             }
         }
         controllerChoiceInt = 999;
-        while (player1.getHp() > 0 && player1.getWorldLocation() < 64) {
+        while (player1.getHp() > 0 && player1.getWorldLocation() < N) {
             while (controllerChoiceInt != 0) {
                 this.controllerChoiceInt = sc.nextInt();
                 if (controllerChoiceInt == 0) {
-                    System.out.println("You are in level " + player1.getWorldLocation());
+                    System.out.println("You are in level " + (player1.getWorldLocation() + 1));
                     System.out.println("(Roll the dice to move your character inside the dungeon)");
                     utils.askToRoll();
                 } else if (controllerChoiceInt == 9) {
@@ -83,8 +83,8 @@ public class DungeonVar {
             controllerChoiceInt = 999;
         }
 
-        player1.setWorldLocation(64);
-        System.out.println("You are in level " + player1.getWorldLocation());
+        player1.setWorldLocation(63);
+        System.out.println("You are in level " + (player1.getWorldLocation() + 1));
         System.out.println("You raid the Dungeon succefully");
     }
 }
