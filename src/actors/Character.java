@@ -1,6 +1,8 @@
 package actors;
 
 import tools.Utils;
+import ui.CharacterSheet;
+import ui.Menu;
 
 public class Character {
     Utils utils = new Utils();
@@ -16,30 +18,6 @@ public class Character {
     String skillThree = "Empty Slot";
     String skillFour = "Empty Slot";
     int worldLocation = 0;
-
-    public void characterSheet() {
-        System.out.println("     --- " + archetype + " ---     ");
-        switch (archetype) {
-            case "Peasant":
-                utils.logoPeasant();
-                break;
-            case "Warrior":
-                utils.logoWarrior();
-                break;
-            case "Mage":
-                utils.logoMage();
-                break;
-        }
-        System.out.println("  Name : " + this.name);
-        System.out.println("  HP : " + this.hp);
-        System.out.println("  AP : " + this.ap);
-        System.out.println("     ---------------     ");
-        System.out.println("  Slot1 : " + this.skillOne);
-        System.out.println("  Slot2 : " + this.skillTwo);
-        System.out.println("  Slot3 : " + this.skillThree);
-        System.out.println("  Slot4 : " + this.skillFour);
-        System.out.println("     ---------------     ");
-    }
 
     public String getArchetype() {
         return this.archetype;

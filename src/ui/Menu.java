@@ -15,6 +15,7 @@ public class Menu {
     Utils utils = new Utils();
 
     Character player1 = new Character();
+    CharacterSheet characterSheet = new CharacterSheet();
 
     public Character getPlayer1() {
         return player1;
@@ -123,7 +124,7 @@ public class Menu {
             System.out.println("     (Try it now : )                                                             ");
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 9) {
-                player1.characterSheet();
+                characterSheet.characterSheet(player1);
             }
         }
     }
