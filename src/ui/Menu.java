@@ -34,15 +34,6 @@ public class Menu {
         System.out.println("                        |   |                          ");
         utils.waitSec(3, true, true);
         createCharacter();
-        if (controllerChoiceInt == 2) {
-            utils.exitGame();
-            this.controllerChoiceInt = sc.nextInt();
-            if (controllerChoiceInt == 1) {
-                System.exit(0);
-            } else if (controllerChoiceInt == 2) {
-                createCharacter();
-            }
-        }
         return player1;
     }
 
@@ -125,6 +116,14 @@ public class Menu {
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 9) {
                 characterSheet.characterSheet(player1);
+            }
+        } else if (controllerChoiceInt == 2) {
+            utils.exitGame();
+            this.controllerChoiceInt = sc.nextInt();
+            if (controllerChoiceInt == 1) {
+                System.exit(0);
+            } else if (controllerChoiceInt == 2) {
+                start();
             }
         }
     }

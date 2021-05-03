@@ -9,5 +9,6 @@ public class Warrior extends Character {
         setMaxHp(10);
         setAp(5);
         setMaxAp(10);
+        setSkillOne("MMA");
     }
 }
