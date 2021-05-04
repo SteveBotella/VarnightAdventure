@@ -40,28 +40,25 @@ public class Room {
             this.skillChoice = sc.nextInt();
             switch (skillChoice) {
                 case 1 :
-                    System.out.println(player.getName() + " use " + player.getSkillOne());
+                    player.getSkillOne().damage(player, enemy);
                     break;
                 case 2 :
-                    System.out.println(player.getName() + " use " + player.getSkillTwo());
+                    System.out.println(player.getName() + " use " + player.getSkillTwo().getName());
                     break;
                 case 3 :
-                    System.out.println(player.getName() + " use " + player.getSkillThree());
+                    System.out.println(player.getName() + " use " + player.getSkillThree().getName());
                     break;
                 case 4 :
-                    System.out.println(player.getName() + " use " + player.getSkillFour());
+                    System.out.println(player.getName() + " use " + player.getSkillFour().getName());
                     break;
             }
-            System.out.println(player.getName() + " attack " + " and deal " + player.getAp() + " to " + enemy.getName());
-            enemy.setHp(enemy.getHp() - player.getAp());
             characterSheet.characterSheet(enemy);
             System.out.println("Versus");
             characterSheet.characterSheet(player);
             if (enemy.getHp() <= 0) {
                 System.out.println(player.getName() + " win the fight !");
             } else {
-                System.out.println(enemy.getName() + " attack " + " and deal " + enemy.getAp() + " to " + player.getName());
-                player.setHp(player.getHp() - enemy.getAp());
+                enemy.getSkillOne().damage(enemy, player);
                 System.out.println("End Turn " + turn);
                 turn++;
                 if (player.getHp() <= 0) {
