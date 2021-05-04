@@ -1,9 +1,6 @@
 package ui;
 
 import actors.Character;
-import actors.Warrior;
-import actors.Mage;
-import ui.Menu;
 import tools.Utils;
 
 public class CharacterSheet {
@@ -21,6 +18,7 @@ public class CharacterSheet {
             case "Mage":
                 utils.logoMage();
                 break;
+            default:
         }
         System.out.println("  Name : " + player.getName());
         System.out.println("  HP : " + player.getHp());

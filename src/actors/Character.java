@@ -1,23 +1,34 @@
 package actors;
 
 import tools.Utils;
-import ui.CharacterSheet;
-import ui.Menu;
 
 public class Character {
     Utils utils = new Utils();
 
     String archetype = "Peasant";
     String name = "Enguerand";
-    int hp = 10;
+    int hp = 4;
     int maxHp = 10;
     int ap = 1;
     int maxAp = 1;
-    String skillOne = "Fatal Fourche";
-    String skillTwo = "Wheelbarrow throw";
-    String skillThree = "Nuage de fumier";
-    String skillFour = "Witch Hunt";
+    String skillOne = "Fork Strike";
+    String skillTwo = "Empty";
+    String skillThree = "Empty";
+    String skillFour = "Empty";
     int worldLocation = 0;
+
+    public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour) {
+        this.archetype = archetype;
+        this.name = name;
+        this.hp = hp;
+        this.maxHp = maxHp;
+        this.ap = ap;
+        this.maxAp = maxAp;
+        this.skillOne = skillOne;
+        this.skillTwo = skillTwo;
+        this.skillThree = skillThree;
+        this.skillFour = skillFour;
+    }
 
     public String getArchetype() {
         return this.archetype;

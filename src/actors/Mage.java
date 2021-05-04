@@ -9,9 +9,9 @@ public class Mage extends Character {
         setMaxHp(6);
         setAp(8);
         setMaxAp(15);
-        setSkillOne("Kamehameha");
-        setSkillTwo("Fire balls");
-        setSkillThree("Le Planter de baton");
-        setSkillFour("Vous... Ne... Passerez... PAS !!!");
+        setSkillOne("Staff");
+        setSkillTwo("Empty");
+        setSkillThree("Empty");
+        setSkillFour("Empty");
     }
 }

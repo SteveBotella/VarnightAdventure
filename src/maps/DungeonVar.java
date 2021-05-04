@@ -102,8 +102,8 @@ public class DungeonVar {
             }
             controllerChoiceInt = 999;
 
-            //TODO Add more situation to this switch
-            Character enemy1 = new Character();
+            Character gobelin = new Character();
+            gobelin.createCharacter("Gobelin","Bazakarak", 4, 4, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
             switch (player1.getWorldLocation()) {
                 case 1 :
                 case 2 :
@@ -114,7 +114,7 @@ public class DungeonVar {
                 case 7 :
                     setRoomArchetype("Enemy");
                     setRoomTitle("Entrance ");
-                    room.room(player1, enemy1, this);
+                    room.room(player1, gobelin, this, "");
                     break;
                 case 8 :
                 case 9 :
@@ -124,7 +124,7 @@ public class DungeonVar {
                 case 13 :
                     setRoomArchetype("Corridor");
                     setRoomTitle("Corridor to Armory ");
-                    room.room(player1, enemy1, this);
+                    room.room(player1, gobelin, this, "");
                     break;
                 case 14 :
                 case 15 :
@@ -133,17 +133,22 @@ public class DungeonVar {
                 case 18 :
                     setRoomArchetype("Enemy");
                     setRoomTitle("Armory ");
-
+                    room.room(player1, gobelin, this, "");
                     break;
-                case 19 :
-                    setRoomArchetype("Enemy");
-                    setRoomTitle("Dungeon Master ");
                 default:
             }
         }
 
         player1.setWorldLocation(N);
-        System.out.println("You are in level " + (player1.getWorldLocation() + 1));
+
+        Character boss = new Character();
+
+        boss.createCharacter("Orc Chief","Zoruk", 12, 12, 2,2,"Heavy axe strike", "Shield Bash", "Axe throw", "Battle Cry");
+        setRoomArchetype("Enemy");
+        setRoomTitle("Dungeon Master ");
+        room.room(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");
+
+        player1.setWorldLocation(N);
         System.out.println("You raid the Dungeon succefully");
         System.out.println(" ");
         System.out.println("             -----------                         ----------                  ");
@@ -158,7 +163,6 @@ public class DungeonVar {
                     break;
                 case 2:
                     System.out.println("Leaving game...");
-
                     break;
                 case 9:
                     characterSheet.characterSheet(player1);

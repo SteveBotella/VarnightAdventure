@@ -9,9 +9,9 @@ public class Warrior extends Character {
         setMaxHp(10);
         setAp(5);
         setMaxAp(10);
-        setSkillOne("John Cenaaaa !!!");
-        setSkillTwo("Patate de forain");
-        setSkillThree("Coup de tête balayette manchette");
-        setSkillFour("Leeeroyyyy JENKINS !!!");
+        setSkillOne("Bare Hands");
+        setSkillTwo("Empty");
+        setSkillThree("Empty");
+        setSkillFour("Empty");
     }
 }

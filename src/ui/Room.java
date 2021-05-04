@@ -13,8 +13,9 @@ public class Room {
 
     int skillChoice = 0;
 
-    public void room(Character player, Character enemy, DungeonVar dungeonVar) {
+    public void room(Character player, Character enemy, DungeonVar dungeonVar, String description) {
         System.out.println("     --- " + dungeonVar.getRoomTitle() + " " + ( player.getWorldLocation() + 1) +"  ---     ");
+        System.out.println("     " + description + "     ");
         switch (dungeonVar.getRoomArchetype()) {
             case "Corridor":
                 utils.logoPeasant();
