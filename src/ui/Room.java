@@ -1,10 +1,10 @@
 package ui;
 
-import java.util.Scanner;
-
+import actors.Character;
 import maps.DungeonVar;
 import tools.Utils;
-import actors.Character;
+
+import java.util.Scanner;
 
 public class Room {
     Scanner sc = new Scanner(System.in);

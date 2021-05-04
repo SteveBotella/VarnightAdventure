@@ -15,7 +15,7 @@ public class DungeonVar {
     int controllerChoiceInt = 999;
     String controllerChoiceString = "";
 
-    int N = 20;
+    int N = 19;
     Room room = new Room();
 
     String roomArchetype = "Corridor";
@@ -103,11 +103,42 @@ public class DungeonVar {
             controllerChoiceInt = 999;
 
             //TODO Add more situation to this switch
+            Character enemy1 = new Character();
             switch (player1.getWorldLocation()) {
-                default:
+                case 1 :
+                case 2 :
+                case 3 :
+                case 4 :
+                case 5 :
+                case 6 :
+                case 7 :
                     setRoomArchetype("Enemy");
-                    Character enemy1 = new Character();
+                    setRoomTitle("Entrance ");
                     room.room(player1, enemy1, this);
+                    break;
+                case 8 :
+                case 9 :
+                case 10 :
+                case 11 :
+                case 12 :
+                case 13 :
+                    setRoomArchetype("Corridor");
+                    setRoomTitle("Corridor to Armory ");
+                    room.room(player1, enemy1, this);
+                    break;
+                case 14 :
+                case 15 :
+                case 16 :
+                case 17 :
+                case 18 :
+                    setRoomArchetype("Enemy");
+                    setRoomTitle("Armory ");
+
+                    break;
+                case 19 :
+                    setRoomArchetype("Enemy");
+                    setRoomTitle("Dungeon Master ");
+                default:
             }
         }
 
