@@ -9,5 +9,9 @@ public class Mage extends Character {
         setMaxHp(6);
         setAp(8);
         setMaxAp(15);
+        setSkillOne("Staff");
+        setSkillTwo("Empty");
+        setSkillThree("Empty");
+        setSkillFour("Empty");
     }
 }

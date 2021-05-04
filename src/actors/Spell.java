@@ -1,4 +1,4 @@
 package actors;
 
-public class Spell {
+public class Spell extends Usable {
 }

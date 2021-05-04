@@ -1,4 +1,4 @@
 package actors;
 
-public class Weapon {
+public class Weapon extends Usable {
 }

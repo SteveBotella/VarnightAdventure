@@ -1,4 +1,4 @@
 package actors;
 
-public class Usable {
+public abstract class Usable {
 }

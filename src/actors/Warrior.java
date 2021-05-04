@@ -9,5 +9,9 @@ public class Warrior extends Character {
         setMaxHp(10);
         setAp(5);
         setMaxAp(10);
+        setSkillOne("Bare Hands");
+        setSkillTwo("Empty");
+        setSkillThree("Empty");
+        setSkillFour("Empty");
     }
 }

@@ -1,39 +1,33 @@
 package actors;
 
-public abstract class Character {
+import tools.Utils;
+
+public class Character {
+    Utils utils = new Utils();
+
     String archetype = "Peasant";
     String name = "Enguerand";
-    int hp = 1;
-    int maxHp = 1;
+    int hp = 4;
+    int maxHp = 10;
     int ap = 1;
     int maxAp = 1;
-    String skillOne = "Bare Hands";
-    String skillTwo = "Empty Slot";
-    String skillThree = "Empty Slot";
-    String skillFour = "Empty Slot";
+    String skillOne = "Fork Strike";
+    String skillTwo = "Empty";
+    String skillThree = "Empty";
+    String skillFour = "Empty";
+    int worldLocation = 0;
 
-    public void characterSheet() {
-        System.out.println("     --- " + archetype + " ---     ");
-        switch (archetype) {
-            case "Peasant":
-                tools.Utils.logoPeasant();
-                break;
-            case "Warrior":
-                tools.Utils.logoWarrior();
-                break;
-            case "Mage":
-                tools.Utils.logoMage();
-                break;
-        }
-        System.out.println("  Name : " + this.name);
-        System.out.println("  HP : " + this.hp);
-        System.out.println("  AP : " + this.ap);
-        System.out.println("     ---------------     ");
-        System.out.println("  Slot1 : " + this.skillOne);
-        System.out.println("  Slot2 : " + this.skillTwo);
-        System.out.println("  Slot3 : " + this.skillThree);
-        System.out.println("  Slot4 : " + this.skillFour);
-        System.out.println("     ---------------     ");
+    public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour) {
+        this.archetype = archetype;
+        this.name = name;
+        this.hp = hp;
+        this.maxHp = maxHp;
+        this.ap = ap;
+        this.maxAp = maxAp;
+        this.skillOne = skillOne;
+        this.skillTwo = skillTwo;
+        this.skillThree = skillThree;
+        this.skillFour = skillFour;
     }
 
     public String getArchetype() {
@@ -114,5 +108,13 @@ public abstract class Character {
 
     public void setSkillFour(String skillFour) {
         this.skillFour = skillFour;
+    }
+
+    public int getWorldLocation() {
+        return worldLocation;
+    }
+
+    public void setWorldLocation(int worldLocation) {
+        this.worldLocation = worldLocation;
     }
 }
