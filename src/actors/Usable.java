@@ -64,10 +64,23 @@ public abstract class Usable {
         this.damageMin = damageMin;
     }
 
-    public void damage(Character player, Character enemy) {
-        int damageRange = player.getAp() + utils.rollDamage(getDamageMin(), getDamageBonus());
-        System.out.println(player.getName() + useText + player.getSkillOne().getName());
-        System.out.println(player.getName() + " deal " + damageRange + " to " + enemy.getName());
-        enemy.setHp(enemy.getHp() - damageRange);
+    public void itemEvent(String eventName, Character player, Character enemy, Usable usable) {
+        switch (eventName) {
+            case "damage":
+                int damageRange = player.getAp() + utils.rollDamage(getDamageMin(), getDamageBonus());
+                System.out.println(player.getName() + useText + usable.getName());
+                System.out.println(player.getName() + " deal " + damageRange + " to " + enemy.getName());
+                enemy.setHp(enemy.getHp() - damageRange);
+                break;
+            case "health":
+                System.out.println(player.getName() + useText + usable.getName());
+                System.out.println(player.getName() + " rest " + usable.healthBonus + " HP ");
+                player.setHp(player.getHp() + usable.healthBonus);
+                if (player.getHp() > player.getMaxHp()) {
+                    player.setHp(player.getMaxHp());
+                }
+                break;
+            default:
+        }
     }
 }

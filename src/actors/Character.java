@@ -19,18 +19,17 @@ public class Character {
 
     int worldLocation = 0;
 
-    public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String weaponName, String spellName1, String spellName2, String itemName) {
+    public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour) {
         this.archetype = archetype;
         this.name = name;
         this.hp = hp;
         this.maxHp = maxHp;
         this.ap = ap;
         this.maxAp = maxAp;
-        skillOne.setName(weaponName);
-        skillTwo.setName(spellName1);
-        skillThree.setName(spellName2);
-        skillFour.setName(itemName);
-
+        this.skillOne = new Weapon(skillOne);
+        this.skillTwo = new Spell(skillTwo);
+        this.skillThree = new Spell(skillThree);
+        this.skillFour = new Item(skillFour);
     }
 
     public String getArchetype() {

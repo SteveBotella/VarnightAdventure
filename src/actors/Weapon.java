@@ -25,6 +25,26 @@ public class Weapon extends Usable {
                 setDamageMin((2));
                 useText = " cast a spell to the target with ";
                 break;
+            case "Handcraft Wand" :
+                setDamageBonus(0);
+                setDamageMin((0));
+                useText = " cast a spell to the target with ";
+                break;
+            case "Handcraft Sword" :
+                setDamageBonus(0);
+                setDamageMin((0));
+                useText = " slay the target with ";
+                break;
+            case "Heavy axe" :
+                setDamageBonus(0);
+                setDamageMin((0));
+                useText = " shred the target with ";
+                break;
+            case "Gobwin dawggewr" :
+                setDamageBonus(0);
+                setDamageMin((0));
+                useText = " cut the target with ";
+                break;
             default:
                 setDamageBonus(0);
                 setDamageMin((0));

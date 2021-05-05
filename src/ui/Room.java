@@ -40,16 +40,16 @@ public class Room {
             this.skillChoice = sc.nextInt();
             switch (skillChoice) {
                 case 1 :
-                    player.getSkillOne().damage(player, enemy);
+                    player.getSkillOne().itemEvent("damage", player, enemy, player.getSkillOne());
                     break;
                 case 2 :
-                    System.out.println(player.getName() + " use " + player.getSkillTwo().getName());
+                    player.getSkillTwo().itemEvent("damage", player, enemy, player.getSkillTwo());
                     break;
                 case 3 :
-                    System.out.println(player.getName() + " use " + player.getSkillThree().getName());
+                    player.getSkillThree().itemEvent("damage", player, enemy, player.getSkillThree());
                     break;
                 case 4 :
-                    System.out.println(player.getName() + " use " + player.getSkillFour().getName());
+                    player.getSkillFour().itemEvent("health",player, enemy, player.getSkillFour());
                     break;
             }
             characterSheet.characterSheet(enemy);
@@ -58,7 +58,7 @@ public class Room {
             if (enemy.getHp() <= 0) {
                 System.out.println(player.getName() + " win the fight !");
             } else {
-                enemy.getSkillOne().damage(enemy, player);
+                enemy.getSkillOne().itemEvent("damage", enemy, player, enemy.getSkillOne());
                 System.out.println("End Turn " + turn);
                 turn++;
                 if (player.getHp() <= 0) {

@@ -102,6 +102,7 @@ public class DungeonVar {
             }
             controllerChoiceInt = 999;
 
+            Character empty = new Character();
             switch (player1.getWorldLocation()) {
                 case 1 :
                 case 2 :
@@ -114,7 +115,7 @@ public class DungeonVar {
                     setRoomTitle("Entrance ");
                     Character gobelin = new Character();
                     gobelin.createCharacter("Gobelin","Bazakarak", 6, 6, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
-                    room.room(player1, gobelin, this, "Ugly");
+                    room.room(player1, gobelin, this, "Stinky place... Gobelin : - Koup koup touwa !");
                     break;
                 case 8 :
                 case 9 :
@@ -124,6 +125,7 @@ public class DungeonVar {
                 case 13 :
                     setRoomArchetype("Corridor");
                     setRoomTitle("Corridor to Armory ");
+                    room.room(player1, empty, this, "You ear something strange... : 'WArEwlwLwlwLwLEee !'");
                     break;
                 case 14 :
                 case 15 :
@@ -134,7 +136,7 @@ public class DungeonVar {
                     setRoomTitle("Armory ");
                     Character gobelin1 = new Character();
                     gobelin1.createCharacter("Gobelin","Kazazouille", 6, 6, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
-                    room.room(player1, gobelin1, this, "Very ugly");
+                    room.room(player1, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
                     break;
                 default:
             }
@@ -144,13 +146,15 @@ public class DungeonVar {
 
         Character boss = new Character();
 
-        boss.createCharacter("Orc Chief","Zoruk", 12, 12, 2,2,"Heavy axe strike", "Shield Bash", "Axe throw", "Battle Cry");
+        boss.createCharacter("Orc Chief","Zoruk", 12, 12, 2,2,"Heavy axe", "Shield Bash", "Axe throw", "Battle Cry");
         setRoomArchetype("Enemy");
         setRoomTitle("Dungeon Master ");
         room.room(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");
 
         player1.setWorldLocation(N);
-        System.out.println("You raid the Dungeon succefully");
+        if (player1.getHp() > 0) {
+            System.out.println("You raid the Dungeon succefully");
+        }
         System.out.println(" ");
         System.out.println("             -----------                         ----------                  ");
         System.out.println("            | Restart > |                       |  Quit >  |                 ");
