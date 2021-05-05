@@ -42,14 +42,18 @@ public class DungeonVar {
 
         utils.waitSec(3, true, true);
         utils.storyText("-----     CHAPTER I     -----",
-                "-----    Dungeon Var    -----");
-
+                        "-----    Dungeon Var    -----",
+                        player1,
+                        characterSheet);
+//TODO Refacto with new choice system (displaying character sheet & loop)
         while (controllerChoiceInt != 0) {
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 0) {
                 utils.waitSec(1, false, false);
                 utils.storyText("After many days traveling across the dangerous forest, the lost villages",
-                        "and enjoy your rest in 'lovely' Inn...");
+                        "and enjoy your rest in 'lovely' Inn...",
+                        player1,
+                        characterSheet);
             } else if (controllerChoiceInt == 9) {
                 characterSheet.characterSheet(player1);
             }
@@ -60,7 +64,9 @@ public class DungeonVar {
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 0) {
                 utils.storyText("You prepare yourself to enter...",
-                        "!!! The Dungeon Var - No one been return !!!");
+                        "!!! The Dungeon Var - No one been return !!!",
+                        player1,
+                        characterSheet);
             } else if (controllerChoiceInt == 9) {
                 characterSheet.characterSheet(player1);
 
@@ -72,7 +78,9 @@ public class DungeonVar {
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 0) {
                 utils.storyText("The sun is falling, night is coming, a cold wind run into your clothes",
-                        "An abandoned Castle is front of you. It stink monsters... Or cheese maybe.");
+                        "An abandoned Castle is front of you. It stink monsters... Or cheese maybe.",
+                        player1,
+                        characterSheet);
             } else if (controllerChoiceInt == 9) {
                 characterSheet.characterSheet(player1);
             }

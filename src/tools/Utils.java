@@ -1,6 +1,15 @@
 package tools;
 
+import ui.CharacterSheet;
+import actors.Character;
+
+import java.util.Scanner;
+
 public class Utils {
+
+    Scanner sc = new Scanner(System.in);
+    int controllerChoiceInt = 1;
+    String controllerChoiceString = "";
 
     // Exit Game
     public void exitGame() {
@@ -35,13 +44,20 @@ public class Utils {
     }
 
     // Use this function to display text in game
-    public void storyText(String lineOne, String lineTwo) {
-        System.out.println("     " + lineOne + "            ");
-        System.out.println("     " + lineTwo + "            ");
-        System.out.println("             ----------                                                      ");
-        System.out.println("            |   Next > |                                                     ");
-        System.out.println("             ----------                                                      ");
-        System.out.println("             0 (Numpad)                                                      ");
+    public void storyText(String lineOne, String lineTwo, Character player, CharacterSheet characterSheet) {
+        while (controllerChoiceInt != 0) {
+            System.out.println("     " + lineOne + "            ");
+            System.out.println("     " + lineTwo + "            ");
+            System.out.println("             ----------                                                      ");
+            System.out.println("            |   Next > |                                                     ");
+            System.out.println("             ----------                                                      ");
+            System.out.println("             0 (Numpad)                                                      ");
+            controllerChoiceInt = sc.nextInt();
+            if (controllerChoiceInt == 9) {
+                characterSheet.characterSheet(player);
+            }
+        }
+        controllerChoiceInt = 999;
     }
 
     // Display peasant logo

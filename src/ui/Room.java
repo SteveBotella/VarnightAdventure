@@ -34,6 +34,7 @@ public class Room {
     public void fight(Character player, Character enemy) {
         int turn = 1;
         while (player.getHp() > 0 && enemy.getHp() > 0) {
+            System.out.println("Start Turn " + turn);
             characterSheet.characterSheet(player);
             System.out.println("Versus");
             characterSheet.characterSheet(enemy);

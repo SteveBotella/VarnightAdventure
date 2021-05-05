@@ -63,25 +63,22 @@ public class Menu {
                 player1.setName(this.controllerChoiceString = sc.next());
                 if (controllerChoiceString != "") {
                     utils.storyText("Once upon a time, in a Far far away Kingdom of peace & love,",
-                            "Lived a Strong, Proud & Honorable Family !");
+                            "Lived a Strong, Proud & Honorable Family !",
+                            player1,
+                            characterSheet);
                 }
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
-                    utils.storyText("They worked hard on day and enjoy their life at night...",
-                            "So... One day comes a new born");
-                }
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
-                    utils.storyText("Likes his Dad he was Proud, likes his Mother he was Strong !",
-                            "Likes his family, he was Honorable...");
-                }
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
-                    System.out.println("     And here he comes ! Today is a great day to raid Dungeons & burn Villages !");
-                    System.out.println("     Here comes... The WARRIOR !!!                                              ");
-                    System.out.println("     We call him :                                                              ");
-                    System.out.println("               --- " + player1.getName() + " !!! ---                            ");
-                }
+                utils.storyText("They worked hard on day and enjoy their life at night...",
+                        "So... One day comes a new born",
+                        player1,
+                        characterSheet);
+                utils.storyText("Likes his Dad he was Proud, likes his Mother he was Strong !",
+                        "Likes his family, he was Honorable...",
+                        player1,
+                        characterSheet);
+                System.out.println("     And here he comes ! Today is a great day to raid Dungeons & burn Villages !");
+                System.out.println("     Here comes... The WARRIOR !!!                                              ");
+                System.out.println("     We call him :                                                              ");
+                System.out.println("               --- " + player1.getName() + " !!! ---                            ");
 
             } else if (controllerChoiceInt == 2) {
                 player1 = new Mage();
@@ -91,27 +88,22 @@ public class Menu {
                 System.out.println("     (PS : No... DarkSasukeDu69 is not Skilled... But Varmagus...)              ");
                 System.out.println("     (Any way, take the name you want... But Varmagus...)                       ");
                 player1.setName(this.controllerChoiceString = sc.next());
-                if (controllerChoiceString != "") {
-                    utils.storyText("Once upon a time, in a Far far away Kingdom of peace & love,",
-                            "Lived a Clever, Virtuous & Noble Family !");
-                }
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
-                    utils.storyText("They learn all about magic on day and enjoy their life at night...",
-                            "So... One day comes a new born");
-                }
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
-                    utils.storyText("Likes his Dad he was Virtuous, likes his Mother he was Clever !",
-                            "Likes his family, he was Noble...");
-                }
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
-                    System.out.println("     And here he comes ! Today is a great day to spell Love Filter & summon Deamons !");
-                    System.out.println("     Here comes... The Mage !!!                                              ");
-                    System.out.println("     We call him :                                                              ");
-                    System.out.println("               --- " + player1.getName() + " !!! ---                            ");
-                }
+                utils.storyText("Once upon a time, in a Far far away Kingdom of peace & love,",
+                        "Lived a Clever, Virtuous & Noble Family !",
+                        player1,
+                        characterSheet);
+                utils.storyText("They learn all about magic on day and enjoy their life at night...",
+                        "So... One day comes a new born",
+                        player1,
+                        characterSheet);
+                utils.storyText("Likes his Dad he was Virtuous, likes his Mother he was Clever !",
+                        "Likes his family, he was Noble...",
+                        player1,
+                        characterSheet);
+                System.out.println("     And here he comes ! Today is a great day to spell Love Filter & summon Deamons !");
+                System.out.println("     Here comes... The Mage !!!                                              ");
+                System.out.println("     We call him :                                                              ");
+                System.out.println("               --- " + player1.getName() + " !!! ---                            ");
             }
 
             System.out.println("     (Now you can use the 9 Numpad input to display your Character Sheet         ");
@@ -120,6 +112,7 @@ public class Menu {
             if (controllerChoiceInt == 9) {
                 characterSheet.characterSheet(player1);
             }
+
         } else if (controllerChoiceInt == 2) {
             utils.exitGame();
             this.controllerChoiceInt = sc.nextInt();
@@ -131,3 +124,4 @@ public class Menu {
         }
     }
 }
+
