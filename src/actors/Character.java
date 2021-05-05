@@ -5,10 +5,10 @@ import tools.Utils;
 public class Character {
     Utils utils = new Utils();
 
-    Usable skillOne = new Weapon();
-    Usable skillTwo = new Spell();
-    Usable skillThree = new Spell();
-    Usable skillFour = new Item();
+    Usable skillOne = new Weapon("Bare Hands");
+    Usable skillTwo = new Spell("Bare Hands");
+    Usable skillThree = new Spell("Bare Hands");
+    Usable skillFour = new Item("Bare Hands");
 
     String archetype = "Peasant";
     String name = "Enguerand";

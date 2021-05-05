@@ -10,8 +10,8 @@ public class Warrior extends Character {
         setAp(5);
         setMaxAp(10);
         getSkillOne().setName("Bare Hands");
-        getSkillTwo().setName("Empty");
-        getSkillThree().setName("Empty");
-        getSkillFour().setName("Empty");
+        getSkillTwo().setName("Bare Hands");
+        getSkillThree().setName("Bare Hands");
+        getSkillFour().setName("Bare Hands");
     }
 }

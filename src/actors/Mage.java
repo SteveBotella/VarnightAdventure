@@ -9,9 +9,9 @@ public class Mage extends Character {
         setMaxHp(6);
         setAp(8);
         setMaxAp(15);
-        getSkillOne().setName("Spell Book");
-        getSkillTwo().setName("Empty");
-        getSkillThree().setName("Empty");
-        getSkillFour().setName("Empty");
+        getSkillOne().setName("Bare Hands");
+        getSkillTwo().setName("Bare Hands");
+        getSkillThree().setName("Bare Hands");
+        getSkillFour().setName("Bare Hands");
     }
 }

@@ -3,6 +3,7 @@ package ui;
 import actors.Character;
 import actors.Mage;
 import actors.Warrior;
+import actors.Weapon;
 import tools.Utils;
 
 import java.util.Scanner;
@@ -56,6 +57,7 @@ public class Menu {
             this.controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 1) {
                 player1 = new Warrior();
+                player1.setSkillOne(new Weapon("Sword"));
                 System.out.println("     Choose a name that feel Heroic, with muscles & Raaaaaage !!!               ");
                 System.out.println("     (PS : No... DarkSasukeDu69 is not Skilled... But Varnight...)              ");
                 System.out.println("     (Any way, take the name you want... But Varnight...)                       ");
@@ -84,6 +86,7 @@ public class Menu {
 
             } else if (controllerChoiceInt == 2) {
                 player1 = new Mage();
+                player1.setSkillOne(new Weapon("Magic Book"));
                 System.out.println("     Choose a name that feel Magic, with brains & Spirit !!!               ");
                 System.out.println("     (PS : No... DarkSasukeDu69 is not Skilled... But Varmagus...)              ");
                 System.out.println("     (Any way, take the name you want... But Varmagus...)                       ");

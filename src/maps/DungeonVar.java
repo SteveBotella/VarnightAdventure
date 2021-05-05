@@ -102,8 +102,6 @@ public class DungeonVar {
             }
             controllerChoiceInt = 999;
 
-            Character gobelin = new Character();
-            gobelin.createCharacter("Gobelin","Bazakarak", 4, 4, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
             switch (player1.getWorldLocation()) {
                 case 1 :
                 case 2 :
@@ -114,7 +112,9 @@ public class DungeonVar {
                 case 7 :
                     setRoomArchetype("Enemy");
                     setRoomTitle("Entrance ");
-                    room.room(player1, gobelin, this, "");
+                    Character gobelin = new Character();
+                    gobelin.createCharacter("Gobelin","Bazakarak", 6, 6, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
+                    room.room(player1, gobelin, this, "Ugly");
                     break;
                 case 8 :
                 case 9 :
@@ -124,7 +124,6 @@ public class DungeonVar {
                 case 13 :
                     setRoomArchetype("Corridor");
                     setRoomTitle("Corridor to Armory ");
-                    room.room(player1, gobelin, this, "");
                     break;
                 case 14 :
                 case 15 :
@@ -133,7 +132,9 @@ public class DungeonVar {
                 case 18 :
                     setRoomArchetype("Enemy");
                     setRoomTitle("Armory ");
-                    room.room(player1, gobelin, this, "");
+                    Character gobelin1 = new Character();
+                    gobelin1.createCharacter("Gobelin","Kazazouille", 6, 6, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
+                    room.room(player1, gobelin1, this, "Very ugly");
                     break;
                 default:
             }

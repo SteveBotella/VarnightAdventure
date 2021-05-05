@@ -87,4 +87,9 @@ public class Utils {
         System.out.println("             0 (Numpad)                                                      ");
         return dice;
     }
+
+    public int rollDamage(int damageMin, int damageMax) {
+        int dice = (int)(Math.random()*damageMax+damageMin);
+        return dice;
+    }
 }
