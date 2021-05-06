@@ -45,105 +45,63 @@ public class DungeonVar {
                         "-----    Dungeon Var    -----",
                         player1,
                         characterSheet);
-//TODO Refacto with new choice system (displaying character sheet & loop)
-        while (controllerChoiceInt != 0) {
-            this.controllerChoiceInt = sc.nextInt();
-            if (controllerChoiceInt == 0) {
-                utils.waitSec(1, false, false);
-                utils.storyText("After many days traveling across the dangerous forest, the lost villages",
+
+        utils.waitSec(1, false, false);
+        utils.storyText("After many days traveling across the dangerous forest, the lost villages",
                         "and enjoy your rest in 'lovely' Inn...",
                         player1,
                         characterSheet);
-            } else if (controllerChoiceInt == 9) {
-                characterSheet.characterSheet(player1);
-            }
-        }
-        controllerChoiceInt = 999;
 
-        while (controllerChoiceInt != 0) {
-            this.controllerChoiceInt = sc.nextInt();
-            if (controllerChoiceInt == 0) {
-                utils.storyText("You prepare yourself to enter...",
+        utils.storyText("You prepare yourself to enter...",
                         "!!! The Dungeon Var - No one been return !!!",
                         player1,
                         characterSheet);
-            } else if (controllerChoiceInt == 9) {
-                characterSheet.characterSheet(player1);
 
-            }
-        }
-        controllerChoiceInt = 999;
+        System.out.println("The sun is falling, night is coming, a cold wind run into your clothes");
+        System.out.println("TAn abandoned Castle is front of you. It stink monsters... Or cheese maybe.");
 
-        while (controllerChoiceInt != 0) {
-            this.controllerChoiceInt = sc.nextInt();
-            if (controllerChoiceInt == 0) {
-                utils.storyText("The sun is falling, night is coming, a cold wind run into your clothes",
-                        "An abandoned Castle is front of you. It stink monsters... Or cheese maybe.",
-                        player1,
-                        characterSheet);
-            } else if (controllerChoiceInt == 9) {
-                characterSheet.characterSheet(player1);
-            }
-        }
-        controllerChoiceInt = 999;
         while (player1.getHp() > 0 && player1.getWorldLocation() < N) {
-            while (controllerChoiceInt != 0) {
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
-                    System.out.println("You are in level " + (player1.getWorldLocation() + 1));
-                    System.out.println("(Roll the dice to move your character inside the dungeon)");
-                    utils.askToRoll();
-                } else if (controllerChoiceInt == 9) {
-                    characterSheet.characterSheet(player1);
-                }
-            }
-            controllerChoiceInt = 999;
-
-            while (controllerChoiceInt != 0) {
-                this.controllerChoiceInt = sc.nextInt();
-                if (controllerChoiceInt == 0) {
+            utils.storyText("You are in level " + (player1.getWorldLocation() + 1),
+                            "(Roll the dice to move your character inside the dungeon)",
+                            player1,
+                            characterSheet);
                     int diceResult = utils.rollDice(6);
                     player1.setWorldLocation(player1.getWorldLocation() + diceResult);
-                } else if (controllerChoiceInt == 9) {
-                    characterSheet.characterSheet(player1);
-                }
-            }
-            controllerChoiceInt = 999;
 
             Character empty = new Character();
             switch (player1.getWorldLocation()) {
-                case 1 :
-                case 2 :
-                case 3 :
-                case 4 :
-                case 5 :
-                case 6 :
-                case 7 :
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
                     setRoomArchetype("Enemy");
                     setRoomTitle("Entrance ");
                     Character gobelin = new Character();
-                    gobelin.createCharacter("Gobelin","Bazakarak", 6, 6, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
+                    gobelin.createCharacter("Gobelin", "Bazakarak", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
                     room.room(player1, gobelin, this, "Stinky place... Gobelin : - Koup koup touwa !");
                     break;
-                case 8 :
-                case 9 :
-                case 10 :
-                case 11 :
-                case 12 :
-                case 13 :
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                case 13:
                     setRoomArchetype("Corridor");
                     setRoomTitle("Corridor to Armory ");
                     room.room(player1, empty, this, "You ear something strange... : 'WArEwlwLwlwLwLEee !'");
                     break;
-                case 14 :
-                case 15 :
-                case 16 :
-                case 17 :
-                case 18 :
+                case 14:
+                case 15:
+                case 16:
+                case 17:
+                case 18:
                     setRoomArchetype("Enemy");
                     setRoomTitle("Armory ");
                     Character gobelin1 = new Character();
-                    gobelin1.createCharacter("Gobelin","Kazazouille", 6, 6, 1,1,"Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
+                    gobelin1.createCharacter("Gobelin", "Kazazouille", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
                     room.room(player1, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
                     break;
                 default:
@@ -154,7 +112,7 @@ public class DungeonVar {
 
         Character boss = new Character();
 
-        boss.createCharacter("Orc Chief","Zoruk", 12, 12, 2,2,"Heavy axe", "Shield Bash", "Axe throw", "Battle Cry");
+        boss.createCharacter("Orc Chief", "Zoruk", 12, 12, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry");
         setRoomArchetype("Enemy");
         setRoomTitle("Dungeon Master ");
         room.room(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");
