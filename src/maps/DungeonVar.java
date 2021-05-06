@@ -67,8 +67,9 @@ public class DungeonVar {
                             characterSheet);
                     int diceResult = utils.rollDice(6);
                     player1.setWorldLocation(player1.getWorldLocation() + diceResult);
+                    room.roomRand(player1, this, "");
 
-            Character empty = new Character();
+            /*Character empty = new Character();
             switch (player1.getWorldLocation()) {
                 case 1:
                 case 2:
@@ -105,7 +106,10 @@ public class DungeonVar {
                     room.room(player1, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
                     break;
                 default:
-            }
+                    setRoomArchetype("Corridor");
+                    setRoomTitle("Corridor ");
+                    room.room(player1, empty, this, " ");
+            }*/
         }
 
         player1.setWorldLocation(N);
