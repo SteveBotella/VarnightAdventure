@@ -7,14 +7,15 @@ import tools.Utils;
 import java.util.Scanner;
 
 public class Menu {
-    Scanner sc = new Scanner(System.in);
-    int controllerChoiceInt = 1;
-    String controllerChoiceString = "";
+    private Scanner sc;
+    private int controllerChoiceInt;
+    private String controllerChoiceString;
 
-    Utils utils = new Utils();
+    //TODO Utiliser le contructeur
+    private Utils utils = new Utils();
 
-    Character player1 = new Character();
-    CharacterSheet characterSheet = new CharacterSheet();
+    private Character player1 = new Character();
+    private CharacterSheet characterSheet = new CharacterSheet();
 
     public Character getPlayer1() {
         return player1;
@@ -22,6 +23,12 @@ public class Menu {
 
     public void setPlayer1(Character player1) {
         this.player1 = player1;
+    }
+
+    public Menu() {
+        this.sc = new Scanner(System.in);
+        this.controllerChoiceInt = 1;
+        this.controllerChoiceString = "";
     }
 
     // Use to display the menu

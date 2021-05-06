@@ -6,6 +6,8 @@ import actors.Character;
 import java.util.Scanner;
 
 public class Utils {
+    //TODO Faire tous les constructeurs de toutes les classes
+    //TODO Tous les attributs des classes a passer en private
 
     Scanner sc = new Scanner(System.in);
     int controllerChoiceInt = 1;
