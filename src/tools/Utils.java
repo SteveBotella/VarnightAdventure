@@ -110,4 +110,9 @@ public class Utils {
         int dice = (int)(Math.random()*damageMax+damageMin);
         return dice;
     }
+
+    public int rollGold(Character enemy) {
+        int gold = (int)(Math.random()*enemy.getGold()+enemy.getMinGold());
+        return gold;
+    }
 }

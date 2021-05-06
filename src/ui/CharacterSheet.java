@@ -24,6 +24,8 @@ public class CharacterSheet {
         System.out.println("  HP : " + player.getHp());
         System.out.println("  AP : " + player.getAp());
         System.out.println("     ---------------     ");
+        System.out.println("  Gold : " + player.getGold());
+        System.out.println("     ---------------     ");
         System.out.println("  Slot1 : " + player.getSkillOne().getName());
         System.out.println("  Slot2 : " + player.getSkillTwo().getName());
         System.out.println("  Slot3 : " + player.getSkillThree().getName());

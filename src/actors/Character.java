@@ -10,6 +10,9 @@ public class Character {
     Usable skillThree = new Spell("Bare Hands");
     Usable skillFour = new Item("Bare Hands");
 
+    int gold = 0;
+    int minGold = 0;
+
     String archetype = "Peasant";
     String name = "Enguerand";
     int hp = 4;
@@ -19,7 +22,7 @@ public class Character {
 
     int worldLocation = 0;
 
-    public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour) {
+    public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour, int gold, int minGold) {
         this.archetype = archetype;
         this.name = name;
         this.hp = hp;
@@ -30,6 +33,8 @@ public class Character {
         this.skillTwo = new Spell(skillTwo);
         this.skillThree = new Spell(skillThree);
         this.skillFour = new Item(skillFour);
+        this.gold = gold;
+        this.minGold = minGold;
     }
 
     public String getArchetype() {
@@ -118,5 +123,21 @@ public class Character {
 
     public void setWorldLocation(int worldLocation) {
         this.worldLocation = worldLocation;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public int getMinGold() {
+        return minGold;
+    }
+
+    public void setMinGold(int minGold) {
+        this.minGold = minGold;
     }
 }

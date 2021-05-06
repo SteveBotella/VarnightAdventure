@@ -80,7 +80,7 @@ public class DungeonVar {
                     setRoomArchetype("Enemy");
                     setRoomTitle("Entrance ");
                     Character gobelin = new Character();
-                    gobelin.createCharacter("Gobelin", "Bazakarak", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
+                    gobelin.createCharacter("Gobelin", "Bazakarak", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
                     room.room(player1, gobelin, this, "Stinky place... Gobelin : - Koup koup touwa !");
                     break;
                 case 8:
@@ -101,7 +101,7 @@ public class DungeonVar {
                     setRoomArchetype("Enemy");
                     setRoomTitle("Armory ");
                     Character gobelin1 = new Character();
-                    gobelin1.createCharacter("Gobelin", "Kazazouille", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp");
+                    gobelin1.createCharacter("Gobelin", "Kazazouille", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
                     room.room(player1, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
                     break;
                 default:
@@ -112,7 +112,7 @@ public class DungeonVar {
 
         Character boss = new Character();
 
-        boss.createCharacter("Orc Chief", "Zoruk", 12, 12, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry");
+        boss.createCharacter("Orc Chief", "Zoruk", 12, 12, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry", 10, 2);
         setRoomArchetype("Enemy");
         setRoomTitle("Dungeon Master ");
         room.room(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");

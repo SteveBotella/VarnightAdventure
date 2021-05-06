@@ -58,6 +58,7 @@ public class Room {
             characterSheet.characterSheet(player);
             if (enemy.getHp() <= 0) {
                 System.out.println(player.getName() + " win the fight !");
+                player.setGold(player.getGold() + utils.rollDamage(1, 3));
             } else {
                 enemy.getSkillOne().itemEvent("damage", enemy, player, enemy.getSkillOne());
                 System.out.println("End Turn " + turn);
