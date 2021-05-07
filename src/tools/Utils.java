@@ -7,11 +7,17 @@ import java.util.Scanner;
 
 public class Utils {
     //TODO Faire tous les constructeurs de toutes les classes
-    //TODO Tous les attributs des classes a passer en private
 
-    Scanner sc = new Scanner(System.in);
-    int controllerChoiceInt = 1;
-    String controllerChoiceString = "";
+    private Scanner sc = new Scanner(System.in);
+    private int controllerChoiceInt = 1;
+    private String controllerChoiceString = "";
+
+    //Constructor
+    public void Utils() {
+        this.sc = new Scanner(System.in);
+        this.controllerChoiceInt = 1;
+        this.controllerChoiceString = "";
+    }
 
     // Exit Game
     public void exitGame() {

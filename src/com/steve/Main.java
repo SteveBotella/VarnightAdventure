@@ -2,10 +2,7 @@ package com.steve;
 
 import actors.Character;
 import maps.DungeonVar;
-import tools.Utils;
 import ui.Menu;
-
-import java.util.Scanner;
 
 public class Main {
 

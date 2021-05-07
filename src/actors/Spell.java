@@ -8,47 +8,47 @@ public class Spell extends Usable {
             case "Fireball" :
                 setDamageBonus(6);
                 setDamageMin((4));
-                useText = " burn the target with ";
+                setUseText(" burn the target with ");
                 break;
             case "Lightning Bolt" :
                 setDamageBonus(4);
                 setDamageMin((2));
-                useText = " blast the target with ";
+                setUseText(" blast the target with ");
                 break;
             case "Shield Bash" :
                 setDamageBonus(2);
                 setDamageMin((1));
-                useText = " push the target with ";
+                setUseText(" push the target with ");
                 break;
             case "Axe throw" :
                 setDamageBonus(4);
                 setDamageMin((2));
-                useText = " throw axe to the target with ";
+                setUseText(" throw axe to the target with ");
                 break;
             case "Battle Cry" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " Waaaaaarg !!! with ";
+                setUseText(" Waaaaaarg !!! with ");
                 break;
             case "Wrock throw" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " throw rock to the target with ";
+                setUseText(" throw rock to the target with ");
                 break;
             case "Rwun Waway" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " try to leave the fight with ";
+                setUseText(" try to leave the fight with ");
                 break;
             case "Whelp" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " call friends to help screaming : - ";
+                setUseText(" call friends to help screaming : - ");
                 break;
             default:
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " hit the target with ";
+                setUseText(" hit the target with ");
         }
     }
 }

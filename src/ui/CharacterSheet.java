@@ -4,7 +4,7 @@ import actors.Character;
 import tools.Utils;
 
 public class CharacterSheet {
-    Utils utils = new Utils();
+    private Utils utils = new Utils();
 
     public void characterSheet(Character player) {
         System.out.println("     --- " + player.getArchetype() + " ---     ");

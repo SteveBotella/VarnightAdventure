@@ -12,7 +12,7 @@ public class Menu {
     private String controllerChoiceString;
 
     //TODO Utiliser le contructeur
-    private Utils utils = new Utils();
+    private Utils utils;
 
     private Character player1 = new Character();
     private CharacterSheet characterSheet = new CharacterSheet();
@@ -26,6 +26,7 @@ public class Menu {
     }
 
     public Menu() {
+        this.utils = new Utils();
         this.sc = new Scanner(System.in);
         this.controllerChoiceInt = 1;
         this.controllerChoiceString = "";

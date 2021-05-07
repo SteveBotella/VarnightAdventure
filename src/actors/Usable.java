@@ -4,17 +4,17 @@ import tools.Utils;
 import ui.CharacterSheet;
 
 public abstract class Usable {
-    CharacterSheet characterSheet = new CharacterSheet();
+    private CharacterSheet characterSheet = new CharacterSheet();
 
-    Utils utils = new Utils();
+    private Utils utils = new Utils();
 
-    String name;
-    int number = 1;
-    boolean stackable = false;
-    int damageBonus;
-    int damageMin;
-    int healthBonus;
-    String useText;
+    private String name;
+    private int number = 1;
+    private boolean stackable = false;
+    private int damageBonus;
+    private int damageMin;
+    private int healthBonus;
+    private String useText;
 
     public String getName() {
         return name;
@@ -62,6 +62,14 @@ public abstract class Usable {
 
     public void setDamageMin(int damageMin) {
         this.damageMin = damageMin;
+    }
+
+    public String getUseText() {
+        return useText;
+    }
+
+    public void setUseText(String useText) {
+        this.useText = useText;
     }
 
     public void itemEvent(String eventName, Character player, Character enemy, Usable usable) {

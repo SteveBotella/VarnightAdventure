@@ -6,17 +6,17 @@ public class Item extends Usable {
         switch (ItemName) {
             case "Health Potion" :
                 setHealthBonus(2);
-                useText = " drink ";
+                setUseText(" drink ");
                 break;
             case "Mana Potion" :
                 setDamageBonus(4);
                 setDamageMin((2));
-                useText = " drink ";
+                setUseText(" drink ");
                 break;
             default:
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " hit the target with ";
+                setUseText(" hit the target with ");
         }
     }
 }

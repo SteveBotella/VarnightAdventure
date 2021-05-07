@@ -8,47 +8,47 @@ public class Weapon extends Usable {
             case "Sword" :
                 setDamageBonus(6);
                 setDamageMin((4));
-                useText = " slay the target with ";
+                setUseText(" slay the target with ");
                 break;
             case "Mace" :
                 setDamageBonus(4);
                 setDamageMin((2));
-                useText = " smash the target with ";
+                setUseText(" smash the target with ");
                 break;
             case "Magic Book" :
                 setDamageBonus(3);
                 setDamageMin((1));
-                useText = " cast a spell to the target with ";
+                setUseText(" cast a spell to the target with ");
                 break;
             case "Wand" :
                 setDamageBonus(2);
                 setDamageMin((2));
-                useText = " cast a spell to the target with ";
+                setUseText(" cast a spell to the target with ");
                 break;
             case "Handcraft Wand" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " cast a spell to the target with ";
+                setUseText(" cast a spell to the target with ");
                 break;
             case "Handcraft Sword" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " slay the target with ";
+                setUseText(" slay the target with ");
                 break;
             case "Heavy axe" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " shred the target with ";
+                setUseText(" shred the target with ");
                 break;
             case "Gobwin dawggewr" :
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " cut the target with ";
+                setUseText(" cut the target with ");
                 break;
             default:
                 setDamageBonus(0);
                 setDamageMin((0));
-                useText = " hit the target with ";
+                setUseText(" hit the target with ");
         }
     }
 }

@@ -1,26 +1,23 @@
 package actors;
 
-import tools.Utils;
-
 public class Character {
-    Utils utils = new Utils();
 
     Usable skillOne = new Weapon("Bare Hands");
     Usable skillTwo = new Spell("Bare Hands");
     Usable skillThree = new Spell("Bare Hands");
     Usable skillFour = new Item("Bare Hands");
 
-    int gold = 0;
-    int minGold = 0;
+    private int gold = 0;
+    private int minGold = 0;
 
-    String archetype = "Peasant";
-    String name = "Enguerand";
-    int hp = 4;
-    int maxHp = 10;
-    int ap = 1;
-    int maxAp = 1;
+    private String archetype = "Peasant";
+    private String name = "Enguerand";
+    private int hp = 4;
+    private int maxHp = 10;
+    private int ap = 1;
+    private int maxAp = 1;
 
-    int worldLocation = 0;
+    private int worldLocation = 0;
 
     public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour, int gold, int minGold) {
         this.archetype = archetype;

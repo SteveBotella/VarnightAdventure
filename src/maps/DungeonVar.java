@@ -8,18 +8,18 @@ import ui.Room;
 import java.util.Scanner;
 
 public class DungeonVar {
-    Utils utils = new Utils();
-    CharacterSheet characterSheet = new CharacterSheet();
+    private Utils utils = new Utils();
+    private CharacterSheet characterSheet = new CharacterSheet();
 
-    Scanner sc = new Scanner(System.in);
-    int controllerChoiceInt = 999;
-    String controllerChoiceString = "";
+    private Scanner sc = new Scanner(System.in);
+    private int controllerChoiceInt = 999;
+    private String controllerChoiceString = "";
 
-    int N = 19;
-    Room room = new Room();
+    private int N = 19;
+    private Room room = new Room();
 
-    String roomArchetype = "Corridor";
-    String roomTitle = "empty";
+    private String roomArchetype = "Corridor";
+    private String roomTitle = "empty";
 
     public String getRoomArchetype() {
         return roomArchetype;

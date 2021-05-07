@@ -7,12 +7,13 @@ import tools.Utils;
 import java.util.Scanner;
 
 public class Room {
-    Scanner sc = new Scanner(System.in);
-    Utils utils = new Utils();
-    CharacterSheet characterSheet = new CharacterSheet();
+    private Scanner sc = new Scanner(System.in);
+    private Utils utils = new Utils();
+    private CharacterSheet characterSheet = new CharacterSheet();
 
     int skillChoice = 0;
 
+    // Constructor
     public void room(Character player, Character enemy, DungeonVar dungeonVar, String description) {
         System.out.println("     --- " + dungeonVar.getRoomTitle() + " " + ( player.getWorldLocation() + 1) +"  ---     ");
         System.out.println("     " + description + "     ");
@@ -31,6 +32,7 @@ public class Room {
         }
     }
 
+    // Constructor for random room
     public void roomRand(Character player, DungeonVar dungeonVar, String description) {
         System.out.println("     --- " + dungeonVar.getRoomTitle() + " " + ( player.getWorldLocation() + 1) +"  ---     ");
         System.out.println("     " + description + "     ");
@@ -55,6 +57,7 @@ public class Room {
         }
     }
 
+    // fight system
     public void fight(Character player, Character enemy) {
         int turn = 1;
         while (player.getHp() > 0 && enemy.getHp() > 0) {

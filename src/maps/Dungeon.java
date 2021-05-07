@@ -1,6 +1,5 @@
 package maps;
 //TODO Set this class as parent
-import actors.Character;
 import tools.Utils;
 import ui.CharacterSheet;
 import ui.Room;
@@ -8,18 +7,18 @@ import ui.Room;
 import java.util.Scanner;
 
 public class Dungeon {
-    Utils utils = new Utils();
-    CharacterSheet characterSheet = new CharacterSheet();
+    private Utils utils = new Utils();
+    private CharacterSheet characterSheet = new CharacterSheet();
 
-    Scanner sc = new Scanner(System.in);
-    int controllerChoiceInt = 999;
-    String controllerChoiceString = "";
+    private Scanner sc = new Scanner(System.in);
+    private int controllerChoiceInt = 999;
+    private String controllerChoiceString = "";
 
-    int N = 19;
-    Room room = new Room();
+    private int N = 19;
+    private Room room = new Room();
 
-    String roomArchetype = "Corridor";
-    String roomTitle = "empty";
+    private String roomArchetype = "Corridor";
+    private String roomTitle = "empty";
 
     public String getRoomArchetype() {
         return roomArchetype;
@@ -44,7 +43,7 @@ public class Dungeon {
     public void setN(int n) {
         N = n;
     }
-
+/*
     public void gameStart(Character player1) {
         player1.setWorldLocation(0);
 
@@ -66,7 +65,7 @@ public class Dungeon {
         boss.createCharacter("Orc Chief", "Zoruk", 12, 12, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry", 10, 2);
         setRoomArchetype("Enemy");
         setRoomTitle("Dungeon Master ");
-        room.room(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");
+        //room.room(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");
 
         player1.setWorldLocation(N);
         if (player1.getHp() > 0) {
@@ -91,5 +90,5 @@ public class Dungeon {
                     break;
             }
         }
-    }
+    }*/
 }
