@@ -11,7 +11,6 @@ public class Menu {
     private int controllerChoiceInt;
     private String controllerChoiceString;
 
-    //TODO Utiliser le contructeur
     private Utils utils;
 
     private Character player1;

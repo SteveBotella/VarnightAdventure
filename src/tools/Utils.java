@@ -6,14 +6,12 @@ import actors.Character;
 import java.util.Scanner;
 
 public class Utils {
-    //TODO Faire tous les constructeurs de toutes les classes
-
     private Scanner sc;
     private int controllerChoiceInt;
     private String controllerChoiceString;
 
     //Constructor
-    public void Utils() {
+    public Utils() {
         this.sc = new Scanner(System.in);
         this.controllerChoiceInt = 1;
         this.controllerChoiceString = "";

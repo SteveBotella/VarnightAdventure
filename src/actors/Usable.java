@@ -26,6 +26,26 @@ public class Usable {
         this.useText = "";
     }
 
+    public void itemEvent(String eventName, Character player, Character enemy, Usable usable, Utils utils) {
+        switch (eventName) {
+            case "damage":
+                int damageRange = player.getAp() + utils.rollDamage(getDamageMin(), getDamageBonus());
+                System.out.println(player.getName() + useText + usable.getName());
+                System.out.println(player.getName() + " deal " + damageRange + " to " + enemy.getName());
+                enemy.setHp(enemy.getHp() - damageRange);
+                break;
+            case "health":
+                System.out.println(player.getName() + useText + usable.getName());
+                System.out.println(player.getName() + " rest " + usable.healthBonus + " HP ");
+                player.setHp(player.getHp() + usable.healthBonus);
+                if (player.getHp() > player.getMaxHp()) {
+                    player.setHp(player.getMaxHp());
+                }
+                break;
+            default:
+        }
+    }
+
     public CharacterSheet getCharacterSheet() {
         return characterSheet;
     }
@@ -88,25 +108,5 @@ public class Usable {
 
     public void setUseText(String useText) {
         this.useText = useText;
-    }
-
-    public void itemEvent(String eventName, Character player, Character enemy, Usable usable, Utils utils) {
-        switch (eventName) {
-            case "damage":
-                int damageRange = player.getAp() + utils.rollDamage(getDamageMin(), getDamageBonus());
-                System.out.println(player.getName() + useText + usable.getName());
-                System.out.println(player.getName() + " deal " + damageRange + " to " + enemy.getName());
-                enemy.setHp(enemy.getHp() - damageRange);
-                break;
-            case "health":
-                System.out.println(player.getName() + useText + usable.getName());
-                System.out.println(player.getName() + " rest " + usable.healthBonus + " HP ");
-                player.setHp(player.getHp() + usable.healthBonus);
-                if (player.getHp() > player.getMaxHp()) {
-                    player.setHp(player.getMaxHp());
-                }
-                break;
-            default:
-        }
     }
 }
