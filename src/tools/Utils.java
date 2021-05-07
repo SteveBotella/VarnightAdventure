@@ -8,9 +8,9 @@ import java.util.Scanner;
 public class Utils {
     //TODO Faire tous les constructeurs de toutes les classes
 
-    private Scanner sc = new Scanner(System.in);
-    private int controllerChoiceInt = 1;
-    private String controllerChoiceString = "";
+    private Scanner sc;
+    private int controllerChoiceInt;
+    private String controllerChoiceString;
 
     //Constructor
     public void Utils() {
@@ -52,7 +52,7 @@ public class Utils {
     }
 
     // Use this function to display text in game
-    public void storyText(String lineOne, String lineTwo, Character player, CharacterSheet characterSheet) {
+    public void storyText(String lineOne, String lineTwo, Character player, CharacterSheet characterSheet, int controllerChoiceInt, Scanner sc) {
         while (controllerChoiceInt != 0) {
             System.out.println("     " + lineOne + "            ");
             System.out.println("     " + lineTwo + "            ");
@@ -62,10 +62,10 @@ public class Utils {
             System.out.println("             0 (Numpad)                                                      ");
             controllerChoiceInt = sc.nextInt();
             if (controllerChoiceInt == 9) {
-                characterSheet.characterSheet(player);
+                characterSheet.paperSheet(player);
             }
         }
-        controllerChoiceInt = 999;
+        //controllerChoiceInt = 999;
     }
 
     // Display peasant logo

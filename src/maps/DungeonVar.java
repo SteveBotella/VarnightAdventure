@@ -8,18 +8,28 @@ import ui.Room;
 import java.util.Scanner;
 
 public class DungeonVar {
-    private Utils utils = new Utils();
-    private CharacterSheet characterSheet = new CharacterSheet();
+    private Utils utils;
+    private CharacterSheet characterSheet;
 
-    private Scanner sc = new Scanner(System.in);
-    private int controllerChoiceInt = 999;
-    private String controllerChoiceString = "";
+    private Scanner sc;
+    private int controllerChoiceInt;
+    private String controllerChoiceString;
 
-    private int N = 19;
-    private Room room = new Room();
+    private int N;
+    private Room room;
 
     private String roomArchetype = "Corridor";
     private String roomTitle = "empty";
+
+    public DungeonVar() {
+        this.utils = new Utils();
+        this.characterSheet = new CharacterSheet();
+        this.sc = new Scanner(System.in);
+        this.controllerChoiceInt = 1;
+        this.controllerChoiceString = "";
+        this.N = 19;
+        this.room = new Room();
+    }
 
     public String getRoomArchetype() {
         return roomArchetype;
@@ -44,18 +54,24 @@ public class DungeonVar {
         utils.storyText("-----     CHAPTER I     -----",
                         "-----    Dungeon Var    -----",
                         player1,
-                        characterSheet);
+                        characterSheet,
+                        controllerChoiceInt,
+                        sc);
 
         utils.waitSec(1, false, false);
         utils.storyText("After many days traveling across the dangerous forest, the lost villages",
                         "and enjoy your rest in 'lovely' Inn...",
                         player1,
-                        characterSheet);
+                        characterSheet,
+                        controllerChoiceInt,
+                        sc);
 
         utils.storyText("You prepare yourself to enter...",
                         "!!! The Dungeon Var - No one been return !!!",
                         player1,
-                        characterSheet);
+                        characterSheet,
+                        controllerChoiceInt,
+                        sc);
 
         System.out.println("The sun is falling, night is coming, a cold wind run into your clothes");
         System.out.println("TAn abandoned Castle is front of you. It stink monsters... Or cheese maybe.");
@@ -64,12 +80,14 @@ public class DungeonVar {
             utils.storyText("You are in level " + (player1.getWorldLocation() + 1),
                             "(Roll the dice to move your character inside the dungeon)",
                             player1,
-                            characterSheet);
+                            characterSheet,
+                            controllerChoiceInt,
+                            sc);
                     int diceResult = utils.rollDice(6);
                     player1.setWorldLocation(player1.getWorldLocation() + diceResult);
-                    room.roomRand(player1, this, "");
+                    //room.roomRand(player1, this, "");
 
-            /*Character empty = new Character();
+            Character empty = new Character();
             switch (player1.getWorldLocation()) {
                 case 1:
                 case 2:
@@ -80,9 +98,9 @@ public class DungeonVar {
                 case 7:
                     setRoomArchetype("Enemy");
                     setRoomTitle("Entrance ");
-                    Character gobelin = new Character();
-                    gobelin.createCharacter("Gobelin", "Bazakarak", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
-                    room.room(player1, gobelin, this, "Stinky place... Gobelin : - Koup koup touwa !");
+                    Character gobelin = new Character("Gobelin", "Bazakarak", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
+                    Room room1 = new Room();
+                    room1.roomRP(player1, gobelin, this, "Stinky place... Gobelin : - Koup koup touwa !");
                     break;
                 case 8:
                 case 9:
@@ -92,7 +110,8 @@ public class DungeonVar {
                 case 13:
                     setRoomArchetype("Corridor");
                     setRoomTitle("Corridor to Armory ");
-                    room.room(player1, empty, this, "You ear something strange... : 'WArEwlwLwlwLwLEee !'");
+                    Room room2 = new Room();
+                    room2.roomRP(player1, empty, this, "You ear something strange... : 'WArEwlwLwlwLwLEee !'");
                     break;
                 case 14:
                 case 15:
@@ -101,25 +120,26 @@ public class DungeonVar {
                 case 18:
                     setRoomArchetype("Enemy");
                     setRoomTitle("Armory ");
-                    Character gobelin1 = new Character();
-                    gobelin1.createCharacter("Gobelin", "Kazazouille", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
-                    room.room(player1, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
+                    Character gobelin1 = new Character("Gobelin", "Kazazouille", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
+                    Room room3 = new Room();
+                    room3.roomRP(player1, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
                     break;
                 default:
                     setRoomArchetype("Corridor");
                     setRoomTitle("Corridor ");
-                    room.room(player1, empty, this, " ");
-            }*/
+                    Room room = new Room();
+                    room.roomRP(player1, empty, this, "");
+            }
         }
 
         player1.setWorldLocation(N);
 
-        Character boss = new Character();
+        Character boss = new Character("Orc Chief", "Zoruk", 12, 12, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry", 10, 2);
 
-        boss.createCharacter("Orc Chief", "Zoruk", 12, 12, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry", 10, 2);
         setRoomArchetype("Enemy");
         setRoomTitle("Dungeon Master ");
-        room.room(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");
+        Room roomBoss = new Room();
+        roomBoss.roomRP(player1, boss, this, "Orc Chief : - Today, you launch in hell ! Waaaarg !");
 
         player1.setWorldLocation(N);
         if (player1.getHp() > 0) {
@@ -140,7 +160,7 @@ public class DungeonVar {
                     System.out.println("Leaving game...");
                     break;
                 case 9:
-                    characterSheet.characterSheet(player1);
+                    characterSheet.paperSheet(player1);
                     break;
             }
         }

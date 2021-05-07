@@ -7,7 +7,7 @@ public class Weapon extends Usable {
         switch (WeaponName) {
             case "Sword" :
                 setDamageBonus(6);
-                setDamageMin((4));
+                setDamageMin(4);
                 setUseText(" slay the target with ");
                 break;
             case "Mace" :

@@ -15,7 +15,7 @@ public class Dungeon {
     private String controllerChoiceString = "";
 
     private int N = 19;
-    private Room room = new Room();
+    private Room room;
 
     private String roomArchetype = "Corridor";
     private String roomTitle = "empty";

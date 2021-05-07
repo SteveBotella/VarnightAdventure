@@ -2,24 +2,40 @@ package actors;
 
 public class Character {
 
-    Usable skillOne = new Weapon("Bare Hands");
-    Usable skillTwo = new Spell("Bare Hands");
-    Usable skillThree = new Spell("Bare Hands");
-    Usable skillFour = new Item("Bare Hands");
+    private Usable skillOne;
+    private Usable skillTwo;
+    private Usable skillThree;
+    private Usable skillFour;
 
-    private int gold = 0;
-    private int minGold = 0;
+    private int gold;
+    private int minGold;
 
-    private String archetype = "Peasant";
-    private String name = "Enguerand";
-    private int hp = 4;
-    private int maxHp = 10;
-    private int ap = 1;
-    private int maxAp = 1;
+    private String archetype;
+    private String name;
+    private int hp;
+    private int maxHp;
+    private int ap;
+    private int maxAp;
 
     private int worldLocation = 0;
 
-    public void createCharacter(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour, int gold, int minGold) {
+    public Character(){
+        this.archetype = "Peasant";
+        this.name = "Enguerand";
+        this.hp = 4;
+        this.maxHp = 10;
+        this.ap = 1;
+        this.maxAp = 1;
+    }
+
+    public Character(String name, int hp, int ap) {
+        this();
+        this.name = name;
+        this.hp = hp;
+        this.ap = ap;
+    }
+
+    public Character(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour, int gold, int minGold) {
         this.archetype = archetype;
         this.name = name;
         this.hp = hp;

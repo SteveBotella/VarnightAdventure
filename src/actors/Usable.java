@@ -3,18 +3,36 @@ package actors;
 import tools.Utils;
 import ui.CharacterSheet;
 
-public abstract class Usable {
-    private CharacterSheet characterSheet = new CharacterSheet();
+public class Usable {
+    private CharacterSheet characterSheet;
 
-    private Utils utils = new Utils();
+    private Utils utils;
 
     private String name;
-    private int number = 1;
-    private boolean stackable = false;
+    private int number;
+    private boolean stackable;
     private int damageBonus;
     private int damageMin;
     private int healthBonus;
     private String useText;
+
+    public Usable() {
+        this.name = "";
+        this.number = 1;
+        this.stackable = false;
+        this.damageBonus = 0;
+        this.damageMin = 0;
+        this.healthBonus = 0;
+        this.useText = "";
+    }
+
+    public CharacterSheet getCharacterSheet() {
+        return characterSheet;
+    }
+
+    public void setCharacterSheet(CharacterSheet characterSheet) {
+        this.characterSheet = characterSheet;
+    }
 
     public String getName() {
         return name;
@@ -72,7 +90,7 @@ public abstract class Usable {
         this.useText = useText;
     }
 
-    public void itemEvent(String eventName, Character player, Character enemy, Usable usable) {
+    public void itemEvent(String eventName, Character player, Character enemy, Usable usable, Utils utils) {
         switch (eventName) {
             case "damage":
                 int damageRange = player.getAp() + utils.rollDamage(getDamageMin(), getDamageBonus());

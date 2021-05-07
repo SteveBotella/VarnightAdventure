@@ -7,14 +7,21 @@ import tools.Utils;
 import java.util.Scanner;
 
 public class Room {
-    private Scanner sc = new Scanner(System.in);
-    private Utils utils = new Utils();
-    private CharacterSheet characterSheet = new CharacterSheet();
+    private Scanner sc;
+    private Utils utils;
+    private CharacterSheet characterSheet;
 
-    int skillChoice = 0;
+    private int skillChoice;
 
     // Constructor
-    public void room(Character player, Character enemy, DungeonVar dungeonVar, String description) {
+    public Room() {
+        this.sc = new Scanner(System.in);
+        this.utils = new Utils();
+        this.characterSheet = new CharacterSheet();
+    }
+
+    //Story room
+    public void roomRP(Character player, Character enemy, DungeonVar dungeonVar, String description) {
         System.out.println("     --- " + dungeonVar.getRoomTitle() + " " + ( player.getWorldLocation() + 1) +"  ---     ");
         System.out.println("     " + description + "     ");
         switch (dungeonVar.getRoomArchetype()) {
@@ -32,7 +39,7 @@ public class Room {
         }
     }
 
-    // Constructor for random room
+    // Random room
     public void roomRand(Character player, DungeonVar dungeonVar, String description) {
         System.out.println("     --- " + dungeonVar.getRoomTitle() + " " + ( player.getWorldLocation() + 1) +"  ---     ");
         System.out.println("     " + description + "     ");
@@ -50,8 +57,7 @@ public class Room {
                 break;
             case 3:
                 dungeonVar.setRoomArchetype("Enemy");
-                Character gobelin = new Character();
-                gobelin.createCharacter("Gobelin", " ", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
+                Character gobelin = new Character("Gobelin", " ", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
                 fight(player, gobelin);
                 break;
         }
@@ -62,32 +68,32 @@ public class Room {
         int turn = 1;
         while (player.getHp() > 0 && enemy.getHp() > 0) {
             System.out.println("Start Turn " + turn);
-            characterSheet.characterSheet(player);
+            characterSheet.paperSheet(player);
             System.out.println("Versus");
-            characterSheet.characterSheet(enemy);
+            characterSheet.paperSheet(enemy);;
             this.skillChoice = sc.nextInt();
             switch (skillChoice) {
                 case 1 :
-                    player.getSkillOne().itemEvent("damage", player, enemy, player.getSkillOne());
+                    player.getSkillOne().itemEvent("damage", player, enemy, player.getSkillOne(), utils);
                     break;
                 case 2 :
-                    player.getSkillTwo().itemEvent("damage", player, enemy, player.getSkillTwo());
+                    player.getSkillTwo().itemEvent("damage", player, enemy, player.getSkillTwo(), utils);
                     break;
                 case 3 :
-                    player.getSkillThree().itemEvent("damage", player, enemy, player.getSkillThree());
+                    player.getSkillThree().itemEvent("damage", player, enemy, player.getSkillThree(), utils);
                     break;
                 case 4 :
-                    player.getSkillFour().itemEvent("health",player, enemy, player.getSkillFour());
+                    player.getSkillFour().itemEvent("health",player, enemy, player.getSkillFour(), utils);
                     break;
             }
-            characterSheet.characterSheet(enemy);
+            characterSheet.paperSheet(enemy);
             System.out.println("Versus");
-            characterSheet.characterSheet(player);
+            characterSheet.paperSheet(player);
             if (enemy.getHp() <= 0) {
                 System.out.println(player.getName() + " win the fight !");
                 player.setGold(player.getGold() + utils.rollGold(enemy));
             } else {
-                enemy.getSkillOne().itemEvent("damage", enemy, player, enemy.getSkillOne());
+                enemy.getSkillOne().itemEvent("damage", enemy, player, enemy.getSkillOne(), utils);
                 System.out.println("End Turn " + turn);
                 turn++;
                 if (player.getHp() <= 0) {

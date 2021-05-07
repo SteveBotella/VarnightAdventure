@@ -4,9 +4,13 @@ import actors.Character;
 import tools.Utils;
 
 public class CharacterSheet {
-    private Utils utils = new Utils();
+    private Utils utils;
 
-    public void characterSheet(Character player) {
+    public CharacterSheet() {
+        utils = new Utils();
+    }
+
+    public void paperSheet(Character player) {
         System.out.println("     --- " + player.getArchetype() + " ---     ");
         switch (player.getArchetype()) {
             case "Peasant":
