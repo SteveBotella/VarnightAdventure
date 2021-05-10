@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VarnightAdventure:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/VarnightAdventure_jar</output-path>
+    <root id="archive" name="VarnightAdventure.jar">
+      <element id="module-output" name="VarnightAdventure" />
+    </root>
+  </artifact>
+</component>
