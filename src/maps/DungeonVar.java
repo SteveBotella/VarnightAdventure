@@ -85,8 +85,8 @@ public class DungeonVar {
                             sc);
                     int diceResult = utils.rollDice(6);
                     player1.setWorldLocation(player1.getWorldLocation() + diceResult);
-                    //room.roomRand(player1, this, "");
-
+                    room.roomRand(player1, this, "");
+/*
             Character empty = new Character();
             switch (player1.getWorldLocation()) {
                 case 1:
@@ -129,7 +129,7 @@ public class DungeonVar {
                     setRoomTitle("Corridor ");
                     Room room = new Room();
                     room.roomRP(player1, empty, this, "");
-            }
+            }*/
         }
 
         player1.setWorldLocation(N);
