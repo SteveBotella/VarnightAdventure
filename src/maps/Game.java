@@ -41,6 +41,13 @@ public class Game {
                     break;
                 case 5 :
                     cases.add(new Dragon());
+                    break;
+                case 6 :
+                    cases.add(new ChestMediumPotion());
+                    break;
+                case 7 :
+                    cases.add(new ChestSword());
+                    break;
             }
         }
     }

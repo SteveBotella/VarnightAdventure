@@ -8,6 +8,10 @@ public class Item extends Usable {
                 setHealthBonus(2);
                 setUseText(" drink ");
                 break;
+            case "Health Medium Potion" :
+                setHealthBonus(5);
+                setUseText(" drink ");
+                break;
             case "Mana Potion" :
                 setDamageBonus(4);
                 setDamageMin((2));
