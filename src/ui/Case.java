@@ -1,4 +1,11 @@
 package ui;
 
-public class Case {
+public abstract class Case {
+    public Case() {
+
+    }
+
+    public void run() {
+        System.out.println("Case");
+    }
 }
