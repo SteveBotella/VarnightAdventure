@@ -76,16 +76,20 @@ public class Game {
                 controllerChoiceInt,
                 sc);
 
-        while (player.getWorldLocation() < caseNumber) {
+        while (player.getWorldLocation() < caseNumber - 1) {
+            int diceResult = utils.rollDice(6);
+            player.setWorldLocation(player.getWorldLocation() + diceResult);
+            if (player.getWorldLocation() > caseNumber) {
+                player.setWorldLocation(caseNumber - 1);
+            }
+            cases.get(player.getWorldLocation()).run(player);
             utils.storyText("You are in level " + (player.getWorldLocation() + 1),
                     "(Roll the dice to move your character inside the dungeon)",
                     player,
                     characterSheet,
                     controllerChoiceInt,
                     sc);
-            int diceResult = utils.rollDice(6);
-            player.setWorldLocation(player.getWorldLocation() + diceResult);
-            cases.get(player.getWorldLocation()).run();
         }
+        System.out.println("End");
     }
 }
