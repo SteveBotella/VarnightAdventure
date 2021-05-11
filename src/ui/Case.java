@@ -1,5 +1,6 @@
 package ui;
 
+import actors.Item;
 import tools.Utils;
 import actors.Character;
 import maps.DungeonVar;
@@ -45,7 +46,14 @@ public abstract class Case {
                     player.getSkillThree().itemEvent("damage", player, enemy, player.getSkillThree(), getUtils());
                     break;
                 case 4:
-                    player.getSkillFour().itemEvent("health", player, enemy, player.getSkillFour(), getUtils());
+                    if (player.getSkillFour().getNumber() >= 1) {
+                        player.getSkillFour().itemEvent("health", player, enemy, player.getSkillFour(), getUtils());
+                        player.getSkillFour().setNumber(player.getSkillFour().getNumber() - 1);
+                    } else {
+                        System.out.println("No more item ! Let's fight...");
+                        player.setSkillFour(new Item(" "));
+                        player.getSkillThree().itemEvent("damage", player, enemy, player.getSkillThree(), getUtils());
+                    }
                     break;
             }
             getCharacterSheet().paperSheet(enemy);

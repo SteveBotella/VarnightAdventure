@@ -17,7 +17,7 @@ public class Dragon extends Case {
     @Override
     public void run(Character player) {
         System.out.println("Dragon");
-        this.enemy = new Character("Dragon", " ", 15, 15, 4, 4, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
+        this.enemy = new Character("Dragon", "Dragon", 15, 15, 4, 4, "Dragon Strike", "Wrock throw", "Rwun Waway", "Whelp", 15, 10);
         fight(player, enemy);
     }
 }

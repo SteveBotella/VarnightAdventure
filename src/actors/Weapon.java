@@ -45,6 +45,15 @@ public class Weapon extends Usable {
                 setDamageMin((0));
                 setUseText(" cut the target with ");
                 break;
+            case "Dragon Strike" :
+                setDamageBonus(0);
+                setDamageMin(0);
+                setUseText(" snatch the target with ");
+                break;
+            case "Dark Magic" :
+                setDamageBonus(0);
+                setDamageMin(0);
+                setUseText(" cursed the target with ");
             default:
                 setDamageBonus(0);
                 setDamageMin((0));

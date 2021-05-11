@@ -28,7 +28,7 @@ public class Game {
             int roll = (int)(Math.random()*5+1);
             switch (roll) {
                 case 1 :
-                    cases.add(new Chest());
+                    cases.add(new ChestPotion());
                     break;
                 case 2 :
                     cases.add(new Empty());

@@ -12,10 +12,10 @@ public class Main {
 
         Character player1 = null;
         //DungeonVar level1 = new DungeonVar();
-        Game game = new Game(10);
+        Game game = new Game(64);
 
         player1 = menu.start();
         //level1.gameStart(player1);
-        game.gameStart(player1, 10);
+        game.gameStart(player1, 64);
     }
 }
