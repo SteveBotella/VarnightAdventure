@@ -5,7 +5,6 @@ import ui.*;
 import actors.Character;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -26,7 +25,7 @@ public class Game {
         this.controllerChoiceString = "";
         this.cases = new ArrayList<>();
         for (int i = 0 ; i < caseNumber; i++) {
-            int roll = (int)(Math.random()*3+1);
+            int roll = (int)(Math.random()*5+1);
             switch (roll) {
                 case 1 :
                     cases.add(new Chest());
@@ -35,8 +34,13 @@ public class Game {
                     cases.add(new Empty());
                     break;
                 case 3 :
-                    cases.add(new Enemy());
+                    cases.add(new Gobelin());
                     break;
+                case 4 :
+                    cases.add(new Sorcerer());
+                    break;
+                case 5 :
+                    cases.add(new Dragon());
             }
         }
     }
@@ -76,7 +80,7 @@ public class Game {
                 controllerChoiceInt,
                 sc);
 
-        while (player.getWorldLocation() < caseNumber - 1) {
+        while (player.getWorldLocation() < (caseNumber - 1) && player.getHp() > 0) {
             int diceResult = utils.rollDice(6);
             player.setWorldLocation(player.getWorldLocation() + diceResult);
             if (player.getWorldLocation() > caseNumber) {
