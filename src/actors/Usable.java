@@ -3,19 +3,65 @@ package actors;
 import tools.Utils;
 import ui.CharacterSheet;
 
+/**
+ * Use this class to create Object that the player can use
+ *
+ * @see Item
+ * @see Weapon
+ * @see Spell
+ */
 public class Usable {
     private CharacterSheet characterSheet;
 
+    /**
+     * Call this class to access utilities methods such as dice roll, story telling etc...
+     *
+     * @see Utils
+     */
     private Utils utils;
 
+    /**
+     * Usable name displayed
+     */
     private String name;
+
+    /**
+     * Number in inventory
+     */
     private int number;
+
+    /**
+     * Tell this usable is stackable or not
+     *
+     * Use only one slot for carrying potions for example
+     */
     private boolean stackable;
+
+    /**
+     * Bonus damage to apply
+     */
     private int damageBonus;
+
+    /**
+     * Minimum bonus damage to apply
+     */
     private int damageMin;
+
+    /**
+     * Health restored by using this
+     */
     private int healthBonus;
+
+    /**
+     * Text displayed when a Character using this usable
+     *
+     * @see Character
+     */
     private String useText;
 
+    /**
+     * Base constructor
+     */
     public Usable() {
         this.name = "";
         this.number = 1;
@@ -26,6 +72,14 @@ public class Usable {
         this.useText = "";
     }
 
+    /**
+     * Call this method to trigger a damage event or healing or another effect
+     * @param eventName String Event name to trigger the switch case.
+     * @param player Character using this event
+     * @param enemy Character targeting by this event
+     * @param usable Usable used to display informations like his name in text
+     * @param utils Utils As parameter from the class used
+     */
     public void itemEvent(String eventName, Character player, Character enemy, Usable usable, Utils utils) {
         switch (eventName) {
             case "damage":

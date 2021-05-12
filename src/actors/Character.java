@@ -1,24 +1,90 @@
 package actors;
 
+/**
+ * Use to create player and enemies
+ *
+ * @see Warrior
+ * @see Mage
+ */
 public class Character {
 
+    /**
+     * Equip weapon in this slot
+     * @see Weapon
+     */
     private Usable skillOne;
+
+    /**
+     * Equip spell in this slot
+     * @see Spell
+     */
     private Usable skillTwo;
+
+    /**
+     * Equip spell in this slot
+     * @see Spell
+     */
     private Usable skillThree;
+
+    /**
+     * Equip Item in this slot
+     * @see Item
+     */
     private Usable skillFour;
 
+    /**
+     * Gold own by this character
+     */
     private int gold;
+
+    /**
+     * Minimum Gold own by this character when you loot him
+     */
     private int minGold;
 
+    /**
+     * Define the archetype of the character. Change your Stats like AP, HP, Spells...
+     * @see Warrior
+     * @see Mage
+     */
     private String archetype;
+
+    /**
+     * Character name displayed
+     */
     private String name;
+
+    /**
+     * Actual Health Points
+     */
     private int hp;
+
+    /**
+     * Maximum Health Point this character can have
+     */
     private int maxHp;
+
+    /**
+     * Actual Attack Power
+     */
     private int ap;
+
+    /**
+     * Maximum Attack Power this character can have
+     */
     private int maxAp;
 
+    /**
+     * Player position in the "world"
+     * @see maps.Dungeon
+     * @see ui.Room
+     */
     private int worldLocation = 0;
 
+    /**
+     * Base constructor.
+     * This constructor create a basic character. Be able to change this later
+     */
     public Character(){
         this.archetype = "Peasant";
         this.name = "Enguerand";
@@ -28,6 +94,12 @@ public class Character {
         this.maxAp = 1;
     }
 
+    /**
+     * Use this constructor to create a character by choosing his name, hp & ap
+     * @param name String Character name
+     * @param hp int Character HP
+     * @param ap int Character AP
+     */
     public Character(String name, int hp, int ap) {
         this();
         this.name = name;
@@ -35,6 +107,21 @@ public class Character {
         this.ap = ap;
     }
 
+    /**
+     * Use this constructor to create a character by choosing all parameters
+     * @param archetype String Character archetype
+     * @param name String Character name
+     * @param hp int Character HP
+     * @param maxHp int Character maxHP
+     * @param ap int Character AP
+     * @param maxAp int Character maxAP
+     * @param skillOne Weapon Character weapon slot
+     * @param skillTwo Spell Character spell slot 1
+     * @param skillThree Spell Character spell slot 2
+     * @param skillFour Item Character item slot
+     * @param gold int Character gold earned
+     * @param minGold int Character minimum gold to loot from
+     */
     public Character(String archetype, String name, int hp, int maxHp, int ap, int maxAp, String skillOne, String skillTwo, String skillThree, String skillFour, int gold, int minGold) {
         this.archetype = archetype;
         this.name = name;

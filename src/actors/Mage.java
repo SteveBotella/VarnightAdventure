@@ -1,7 +1,16 @@
 package actors;
 
+/**
+ * Use to create a Mage
+ * This class extends Character
+ *
+ * @see Character
+ */
 public class Mage extends Character {
 
+    /**
+     * Use this constructor to create a base Mage
+     */
     public Mage() {
         super("Mage",
                 "",

@@ -1,19 +1,54 @@
 package ui;
 
+import actors.Character;
 import actors.Item;
 import tools.Utils;
-import actors.Character;
-import maps.DungeonVar;
 
 import java.util.Scanner;
 
+/**
+ * Use to create Case that the player encounter
+ *
+ * @see maps.Game
+ */
 public abstract class Case {
+
+    /**
+     * Read the player inputs
+     */
     private Scanner sc;
+
+    /**
+     * Tools enable to run dice & other usefull methods
+     *
+     * @see Utils
+     */
     private Utils utils;
+
+    /**
+     * Character sheet with player informations
+     *
+     * @see CharacterSheet
+     */
     private CharacterSheet characterSheet;
+
+    /**
+     * The player character
+     *
+     * @see Character
+     */
     private Character player;
+
+    /**
+     * The character skill choice when it's his turn
+     *
+     * @see Character
+     */
     private int skillChoice;
 
+    /**
+     * Base constructor
+     */
     public Case() {
         this.sc = new Scanner(System.in);
         this.utils = new Utils();
@@ -21,11 +56,22 @@ public abstract class Case {
         this.skillChoice = 999;
     }
 
+    /**
+     * Call to play the event needed
+     *
+     * @param player Character calling this event by opening the Case
+     */
     public void run(Character player) {
         System.out.println("");
     }
 
-    // fight system
+    /**
+     * The fight system
+     * Player & enemy play each turn
+     *
+     * @param player Character for the player
+     * @param enemy Character for the enemy
+     */
     public void fight(Character player, Character enemy) {
         int turn = 1;
         while (player.getHp() > 0 && enemy.getHp() > 0) {

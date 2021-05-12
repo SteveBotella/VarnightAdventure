@@ -1,7 +1,17 @@
 package actors;
 
+/**
+ * Use to create Spells extends Usable
+ *
+ * @see Usable
+ */
 public class Spell extends Usable {
 
+    /**
+     * base constructor
+     *
+     * @param SpellName String Call the spell parameters by identifying it with a name
+     */
     public Spell(String SpellName) {
         setName(SpellName);
         switch (SpellName) {

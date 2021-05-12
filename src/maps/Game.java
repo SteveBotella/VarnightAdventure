@@ -7,16 +7,56 @@ import actors.Character;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Use to create the game board that the player interact with
+ *
+ * @see Case
+ */
 public class Game {
 
+    /**
+     * The generated grid
+     *
+     * @see Case
+     */
     private ArrayList<Case> cases;
+
+    /**
+     * Tools enable to run dice & other usefull methods
+     *
+     * @see Utils
+     */
     private Utils utils;
+
+    /**
+     * Character sheet with player informations
+     *
+     * @see CharacterSheet
+     */
     private CharacterSheet characterSheet;
 
+    /**
+     * Scanner use to read player inputs
+     */
     private Scanner sc;
+
+    /**
+     * int result for scanner
+     */
     private int controllerChoiceInt;
+
+    /**
+     * string result for scanner
+     */
     private String controllerChoiceString;
 
+    /**
+     * Base constructor to create the game
+     *
+     * @param caseNumber int number of cases to be generate
+     *
+     * @see Case
+     */
     public Game(int caseNumber) {
         this.utils = new Utils();
         this.characterSheet = new CharacterSheet();
@@ -52,6 +92,14 @@ public class Game {
         }
     }
 
+    /**
+     * Start the game
+     *
+     * @param player Character running the game
+     * @param caseNumber int number of cases
+     *
+     * @see Case
+     */
     public void gameStart(Character player, int caseNumber) {
         player.setWorldLocation(0);
         utils.waitSec(3, true, true);

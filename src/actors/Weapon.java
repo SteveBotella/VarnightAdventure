@@ -1,7 +1,17 @@
 package actors;
 
+/**
+ * Use to create Weapons extends Usable
+ *
+ * @see Usable
+ */
 public class Weapon extends Usable {
 
+    /**
+     * Base constructor
+     *
+     * @param WeaponName String Call the weapon parameters by identifying it with a name
+     */
     public Weapon(String WeaponName) {
         setName(WeaponName);
         switch (WeaponName) {

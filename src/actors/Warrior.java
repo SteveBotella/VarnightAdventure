@@ -1,7 +1,16 @@
 package actors;
 
+/**
+ * Use to create a Warrior
+ * This class extends Character
+ *
+ * @see Character
+ */
 public class Warrior extends Character {
 
+    /**
+     * Use this constructor to create a base Warrior
+     */
     public Warrior() {
         super("Warrior",
                 "",

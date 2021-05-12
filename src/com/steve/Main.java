@@ -1,9 +1,15 @@
 package com.steve;
 
 import actors.Character;
-import maps.DungeonVar;
 import maps.Game;
 import ui.Menu;
+
+/**
+ * Manage the application & call classes
+ *
+ * @author steve
+ * @version 1.0
+ */
 
 public class Main {
 

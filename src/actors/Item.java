@@ -1,6 +1,17 @@
 package actors;
 
+/**
+ * Use to create Items extends Usable
+ *
+ * @see Usable
+ */
 public class Item extends Usable {
+
+    /**
+     * Base constructor
+     *
+     * @param ItemName String Call the item parameters by identifying it with a name
+     */
     public Item(String ItemName) {
         setName(ItemName);
         switch (ItemName) {
