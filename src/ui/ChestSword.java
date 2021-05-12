@@ -1,7 +1,6 @@
 package ui;
 
 import actors.Character;
-import actors.Item;
 import actors.Weapon;
 
 public class ChestSword extends Case {
@@ -12,6 +11,7 @@ public class ChestSword extends Case {
             System.out.println("Already got a sword");
         } else {
             player.setSkillOne(new Weapon("Sword"));
+            System.out.println("You take the Sword");
         }
     }
 }

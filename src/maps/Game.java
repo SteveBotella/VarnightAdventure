@@ -65,7 +65,7 @@ public class Game {
         this.controllerChoiceString = "";
         this.cases = new ArrayList<>();
         for (int i = 0 ; i < caseNumber; i++) {
-            int roll = (int)(Math.random()*5+1);
+            int roll = (int)(Math.random()*10+1);
             switch (roll) {
                 case 1 :
                     cases.add(new ChestPotion());
@@ -77,16 +77,27 @@ public class Game {
                     cases.add(new Gobelin());
                     break;
                 case 4 :
-                    cases.add(new Sorcerer());
+                    //cases.add(new Sorcerer());
+                    cases.add(new Empty());
                     break;
                 case 5 :
-                    cases.add(new Dragon());
+                    //cases.add(new Dragon());
+                    cases.add(new Empty());
                     break;
                 case 6 :
                     cases.add(new ChestMediumPotion());
                     break;
                 case 7 :
                     cases.add(new ChestSword());
+                    break;
+                case 8 :
+                    cases.add(new ChestMace());
+                    break;
+                case 9 :
+                    cases.add(new ChestLightningBolt());
+                    break;
+                case 10 :
+                    cases.add(new ChestFireball());
                     break;
             }
         }
