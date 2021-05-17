@@ -18,7 +18,7 @@ public class Main {
 
         Character player1 = null;
         //DungeonVar level1 = new DungeonVar();
-        Game game = new Game(64);
+        Game game = new Game(64, 15, 7, 3, 5, 5, 5, 5, 5, 5, 9 );
 
         player1 = menu.start();
         //level1.gameStart(player1);

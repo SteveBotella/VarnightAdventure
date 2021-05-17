@@ -4,7 +4,10 @@ import tools.Utils;
 import ui.*;
 import actors.Character;
 
+import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -51,7 +54,9 @@ public class Game {
     private String controllerChoiceString;
 
     /**
+     * Choose number of case type you want
      *
+     * @see Case
      */
     private int nbGoblin;
     private int nbSorcerer;
@@ -71,48 +76,65 @@ public class Game {
      *
      * @see Case
      */
-    public Game(int caseNumber) {
+    public Game(int caseNumber, int nbGoblin, int nbSorcerer, int nbDragon, int nbSword, int nbMace, int nbPotion, int nbMediumPotion, int nbLightningBolt, int nbFireball, int nbEmpty) {
         this.utils = new Utils();
         this.characterSheet = new CharacterSheet();
         this.sc = new Scanner(System.in);
         this.controllerChoiceInt = 1;
         this.controllerChoiceString = "";
         this.cases = new ArrayList<>();
-        for (int i = 0 ; i < caseNumber; i++) { //TODO new rand system with choosing cases
-            int roll = (int)(Math.random()*10+1);
-            switch (roll) {
-                case 1 :
-                    cases.add(new ChestPotion());
-                    break;
-                case 2 :
-                    cases.add(new Empty());
-                    break;
-                case 3 :
-                    cases.add(new Gobelin());
-                    break;
-                case 4 :
-                    cases.add(new Sorcerer());
-                    break;
-                case 5 :
-                    cases.add(new Dragon());
-                    break;
-                case 6 :
-                    cases.add(new ChestMediumPotion());
-                    break;
-                case 7 :
-                    cases.add(new ChestSword());
-                    break;
-                case 8 :
-                    cases.add(new ChestMace());
-                    break;
-                case 9 :
-                    cases.add(new ChestLightningBolt());
-                    break;
-                case 10 :
-                    cases.add(new ChestFireball());
-                    break;
-            }
+        this.nbGoblin = nbGoblin;
+        this.nbSorcerer = nbSorcerer;
+        this.nbDragon = nbDragon;
+        this.nbSword = nbSword;
+        this.nbMace = nbMace;
+        this.nbPotion = nbPotion;
+        this.nbMediumPotion = nbMediumPotion;
+        this.nbLightningBolt = nbLightningBolt;
+        this.nbFireball = nbFireball;
+        this.nbEmpty = nbEmpty;
+
+        for (int i = 0; i < nbGoblin; i++) {
+            cases.add(new Gobelin());
         }
+
+        for (int i = 0; i < nbSorcerer; i++) {
+            cases.add(new Sorcerer());
+        }
+
+        for (int i = 0; i < nbDragon; i++) {
+            cases.add(new Dragon());
+        }
+
+        for (int i = 0; i < nbMace; i++) {
+            cases.add(new ChestMace());
+        }
+
+        for (int i = 0; i < nbSword; i++) {
+            cases.add(new ChestSword());
+        }
+
+        for (int i = 0; i < nbPotion; i++) {
+            cases.add(new ChestPotion());
+        }
+
+        for (int i = 0; i < nbMediumPotion; i++) {
+            cases.add(new ChestMediumPotion());
+        }
+
+        for (int i = 0; i < nbLightningBolt; i++) {
+            cases.add(new ChestLightningBolt());
+        }
+
+        for (int i = 0; i < nbFireball; i++) {
+            cases.add(new ChestFireball());
+        }
+
+        for (int i = 0; i < nbEmpty; i++) {
+            cases.add(new Empty());
+        }
+
+        Collections.shuffle(this.cases);
     }
 
     /**

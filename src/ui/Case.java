@@ -45,6 +45,7 @@ public abstract class Case {
      * @see Character
      */
     private int skillChoice;
+    private int controllerChoiceInt;
 
     /**
      * Base constructor
@@ -54,6 +55,7 @@ public abstract class Case {
         this.utils = new Utils();
         this.characterSheet = new CharacterSheet();
         this.skillChoice = 999;
+        this.controllerChoiceInt = 999;
     }
 
     /**
@@ -79,7 +81,7 @@ public abstract class Case {
             getCharacterSheet().paperSheet(player);
             System.out.println("Versus");
             getCharacterSheet().paperSheet(enemy);
-            ;
+
             this.setSkillChoice(getSc().nextInt());
             switch (getSkillChoice()) {
                 case 1:
@@ -102,6 +104,12 @@ public abstract class Case {
                     }
                     break;
             }
+            utils.storyText("Enemy turn",
+                            "Prepare yourself...",
+                            player,
+                            characterSheet,
+                            controllerChoiceInt,
+                            sc);
             getCharacterSheet().paperSheet(enemy);
             System.out.println("Versus");
             getCharacterSheet().paperSheet(player);
@@ -111,6 +119,12 @@ public abstract class Case {
             } else {
                 enemy.getSkillOne().itemEvent("damage", enemy, player, enemy.getSkillOne(), getUtils());
                 System.out.println("End Turn " + turn);
+                utils.storyText("Get ready",
+                        "...",
+                        player,
+                        characterSheet,
+                        controllerChoiceInt,
+                        sc);
                 turn++;
                 if (player.getHp() <= 0) {
                     System.out.println("Game Over");
