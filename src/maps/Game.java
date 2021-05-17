@@ -51,6 +51,20 @@ public class Game {
     private String controllerChoiceString;
 
     /**
+     *
+     */
+    private int nbGoblin;
+    private int nbSorcerer;
+    private int nbDragon;
+    private int nbSword;
+    private int nbMace;
+    private int nbPotion;
+    private int nbMediumPotion;
+    private int nbLightningBolt;
+    private int nbFireball;
+    private int nbEmpty;
+
+    /**
      * Base constructor to create the game
      *
      * @param caseNumber int number of cases to be generate
@@ -64,7 +78,7 @@ public class Game {
         this.controllerChoiceInt = 1;
         this.controllerChoiceString = "";
         this.cases = new ArrayList<>();
-        for (int i = 0 ; i < caseNumber; i++) {
+        for (int i = 0 ; i < caseNumber; i++) { //TODO new rand system with choosing cases
             int roll = (int)(Math.random()*10+1);
             switch (roll) {
                 case 1 :
@@ -77,12 +91,10 @@ public class Game {
                     cases.add(new Gobelin());
                     break;
                 case 4 :
-                    //cases.add(new Sorcerer());
-                    cases.add(new Empty());
+                    cases.add(new Sorcerer());
                     break;
                 case 5 :
-                    //cases.add(new Dragon());
-                    cases.add(new Empty());
+                    cases.add(new Dragon());
                     break;
                 case 6 :
                     cases.add(new ChestMediumPotion());
@@ -160,6 +172,30 @@ public class Game {
                     controllerChoiceInt,
                     sc);
         }
-        System.out.println("End");
+
+        if (player.getHp() > 0) {
+            System.out.println("You raid the Dungeon succefully");
+        }
+        controllerChoiceInt = 999;
+        System.out.println(" ");
+        System.out.println("             -----------                         ----------                  ");
+        System.out.println("            | Restart > |                       |  Quit >  |                 ");
+        System.out.println("             -----------                         ----------                  ");
+        System.out.println("             1 (Numpad)                          2 (Numpad)                  ");
+        while (controllerChoiceInt != 1 && controllerChoiceInt != 2) {
+            this.controllerChoiceInt = sc.nextInt();
+            switch (controllerChoiceInt) {
+                case 1:
+                    player.setWorldLocation(0);
+                    gameStart(player, 64);
+                    break;
+                case 2:
+                    System.out.println("Leaving game...");
+                    break;
+                case 9:
+                    characterSheet.paperSheet(player);
+                    break;
+            }
+        }
     }
 }

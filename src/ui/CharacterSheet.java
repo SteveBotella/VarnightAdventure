@@ -33,7 +33,7 @@ public class CharacterSheet {
         System.out.println("  Slot1 : " + player.getSkillOne().getName());
         System.out.println("  Slot2 : " + player.getSkillTwo().getName());
         System.out.println("  Slot3 : " + player.getSkillThree().getName());
-        System.out.println("  Slot4 : " + player.getSkillFour().getName());
+        System.out.println("  Slot4 : " + player.getSkillFour().getName() + " : " + player.getSkillFour().getNumber());
         System.out.println("     ---------------     ");
     }
 }
