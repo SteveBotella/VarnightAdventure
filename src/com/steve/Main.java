@@ -1,6 +1,7 @@
 package com.steve;
 
 import actors.Character;
+import maps.DungeonVar;
 import maps.Game;
 import ui.Menu;
 
@@ -17,11 +18,11 @@ public class Main {
         Menu menu = new Menu();
 
         Character player1 = null;
-        //DungeonVar level1 = new DungeonVar();
-        Game game = new Game(64, 15, 7, 3, 5, 5, 5, 5, 5, 5, 9 );
+        DungeonVar level1 = new DungeonVar();
+        Game game = new Game(15, 7, 3, 5, 5, 5, 5, 5, 5, 9 );
 
         player1 = menu.start();
         //level1.gameStart(player1);
-        game.gameStart(player1, 64);
+        game.gameStart(player1);
     }
 }

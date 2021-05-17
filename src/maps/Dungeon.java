@@ -1,5 +1,5 @@
 package maps;
-//TODO Set this class as parent
+
 import actors.Character;
 import tools.Utils;
 import ui.CharacterSheet;
@@ -29,6 +29,72 @@ public class Dungeon {
         this.controllerChoiceString = "";
         this.N = 19;
         this.room = new Room();
+    }
+
+    public Dungeon(Utils utils, CharacterSheet characterSheet, Scanner sc, int controllerChoiceInt, String controllerChoiceString, int N, Room room ) {
+        this.utils = utils;
+        this.characterSheet = characterSheet;
+        this.sc = sc;
+        this.controllerChoiceInt = controllerChoiceInt;
+        this.controllerChoiceString = controllerChoiceString;
+        this.N = 19;
+        this.room = room;
+    }
+
+    public Utils getUtils() {
+        return utils;
+    }
+
+    public void setUtils(Utils utils) {
+        this.utils = utils;
+    }
+
+    public CharacterSheet getCharacterSheet() {
+        return characterSheet;
+    }
+
+    public void setCharacterSheet(CharacterSheet characterSheet) {
+        this.characterSheet = characterSheet;
+    }
+
+    public Scanner getSc() {
+        return sc;
+    }
+
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
+
+    public int getControllerChoiceInt() {
+        return controllerChoiceInt;
+    }
+
+    public void setControllerChoiceInt(int controllerChoiceInt) {
+        this.controllerChoiceInt = controllerChoiceInt;
+    }
+
+    public String getControllerChoiceString() {
+        return controllerChoiceString;
+    }
+
+    public void setControllerChoiceString(String controllerChoiceString) {
+        this.controllerChoiceString = controllerChoiceString;
+    }
+
+    public int getN() {
+        return N;
+    }
+
+    public void setN(int n) {
+        N = n;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public String getRoomArchetype() {

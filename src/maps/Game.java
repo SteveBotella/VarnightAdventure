@@ -72,11 +72,9 @@ public class Game {
     /**
      * Base constructor to create the game
      *
-     * @param caseNumber int number of cases to be generate
-     *
      * @see Case
      */
-    public Game(int caseNumber, int nbGoblin, int nbSorcerer, int nbDragon, int nbSword, int nbMace, int nbPotion, int nbMediumPotion, int nbLightningBolt, int nbFireball, int nbEmpty) {
+    public Game(int nbGoblin, int nbSorcerer, int nbDragon, int nbSword, int nbMace, int nbPotion, int nbMediumPotion, int nbLightningBolt, int nbFireball, int nbEmpty) {
         this.utils = new Utils();
         this.characterSheet = new CharacterSheet();
         this.sc = new Scanner(System.in);
@@ -141,11 +139,10 @@ public class Game {
      * Start the game
      *
      * @param player Character running the game
-     * @param caseNumber int number of cases
      *
      * @see Case
      */
-    public void gameStart(Character player, int caseNumber) {
+    public void gameStart(Character player) {
         player.setWorldLocation(0);
         utils.waitSec(3, true, true);
         utils.storyText("-----     CHAPTER I     -----",
@@ -180,11 +177,11 @@ public class Game {
                 controllerChoiceInt,
                 sc);
 
-        while (player.getWorldLocation() < (caseNumber - 1) && player.getHp() > 0) {
+        while (player.getWorldLocation() < (this.cases.size()) && player.getHp() > 0) {
             int diceResult = utils.rollDice(6);
             player.setWorldLocation(player.getWorldLocation() + diceResult);
-            if (player.getWorldLocation() > caseNumber) {
-                player.setWorldLocation(caseNumber - 1);
+            if (player.getWorldLocation() > this.cases.size()) {
+                player.setWorldLocation(this.cases.size());
             }
             cases.get(player.getWorldLocation()).run(player);
             utils.storyText("You are in level " + (player.getWorldLocation() + 1),
@@ -209,7 +206,7 @@ public class Game {
             switch (controllerChoiceInt) {
                 case 1:
                     player.setWorldLocation(0);
-                    gameStart(player, 64);
+                    gameStart(player);
                     break;
                 case 2:
                     System.out.println("Leaving game...");
