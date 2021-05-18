@@ -131,27 +131,6 @@ public class DungeonVar extends Dungeon {
             Town town = new Town();
             town.gameStart(player);
         }
-        /*
-        setControllerChoiceInt(999);
-        System.out.println(" ");
-        System.out.println("             -----------                         ----------                  ");
-        System.out.println("            | Restart > |                       |  Quit >  |                 ");
-        System.out.println("             -----------                         ----------                  ");
-        System.out.println("             1 (Numpad)                          2 (Numpad)                  ");
-        while (getControllerChoiceInt() != 1 && getControllerChoiceInt() != 2) {
-            setControllerChoiceInt(getSc().nextInt());
-            switch (getControllerChoiceInt()) {
-                case 1:
-                    gameStart(player);
-                    break;
-                case 2:
-                    System.out.println("Leaving game...");
-                    break;
-                case 9:
-                    getCharacterSheet().paperSheet(player);
-                    break;
-            }
-        }*/
     }
 
     public void defaultRoom(Character player, Character empty) {
