@@ -33,10 +33,10 @@ public class Town extends Dungeon {
         }
         setControllerChoiceInt(999);
         System.out.println(" ");
-        System.out.println("             --------                         --------------                  ");
-        System.out.println("            | Shop > |                       |  Adventure > |                 ");
-        System.out.println("             --------                         --------------                  ");
-        System.out.println("            1 (Numpad)                          2 (Numpad)                    ");
+        System.out.println("             --------                --------------             ");
+        System.out.println("            | Shop > |              |  Adventure > |            ");
+        System.out.println("             --------                --------------             ");
+        System.out.println("            1 (Numpad)                 2 (Numpad)               ");
         while (getControllerChoiceInt() != 1 && getControllerChoiceInt() != 2) {
             setControllerChoiceInt(getSc().nextInt());
             switch (getControllerChoiceInt()) {
@@ -89,10 +89,10 @@ public class Town extends Dungeon {
                                 }
                                 break;
                             case 4 :
-                                if (player.getSkillFour().getName().equals("Fireball") || player.getGold() < 10 || player.getArchetype().equals("Warrior")) {
+                                if (player.getSkillThree().getName().equals("Fireball") || player.getGold() < 10 || player.getArchetype().equals("Warrior")) {
                                     System.out.println("You can't buy it.");
                                 } else {
-                                    player.setSkillTwo(new Spell("Fireball"));
+                                    player.setSkillThree(new Spell("Fireball"));
                                     player.setGold(player.getGold() - 10);
                                     System.out.println("Seller : - Nice choice.");
                                     System.out.println("You learn Fireball");
