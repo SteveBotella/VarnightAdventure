@@ -23,6 +23,5 @@ public class Main {
 
         player1 = menu.start();
         level1.gameStart(player1);
-        //game.gameStart(player1);
     }
 }

@@ -1,6 +1,7 @@
 package maps;
 
 import actors.Character;
+import actors.Spell;
 import actors.Warrior;
 import actors.Weapon;
 import tools.Utils;
@@ -45,17 +46,17 @@ public class Town extends Dungeon {
                     System.out.println("Seller : - Hello traveler. What can I do for you ?");
                     System.out.println(" ");
                     System.out.println(player.getName() + " Gold : " + player.getGold());
-                    System.out.println("     -----------     -----------     -----------     -----------     ");
-                    System.out.println("    | Sword   > |   | Mace    > |   | Empty   > |   | Empty   > |    ");
-                    System.out.println("    | Gold : 10 |   | Gold :  5 |   | Gold :  - |   | Gold :  - |    ");
-                    System.out.println("     -----------     -----------     -----------     -----------     ");
-                    System.out.println("     1 (Numpad)       2 (Numpad)      3 (Numpad)      4 (Numpad)     ");
-                    System.out.println("                       Leave shop : 0 (Numpad)                       ");
+                    System.out.println("     -----------    -----------    --------------    --------------     ");
+                    System.out.println("    | Sword   > |  | Mace    > |  | Lightning B. |  | Fireball   > |    ");
+                    System.out.println("    | Gold : 10 |  | Gold :  5 |  | Gold :      5|  | Gold :    10 |    ");
+                    System.out.println("     -----------    -----------    --------------    --------------     ");
+                    System.out.println("     1 (Numpad)      2 (Numpad)     3 (Numpad)      4 (Numpad)          ");
+                    System.out.println("                       Leave shop : 0 (Numpad)                          ");
                     while (getControllerChoiceInt() != 0) {
                         setControllerChoiceInt(getSc().nextInt());
                         switch (getControllerChoiceInt()) {
                             case 1 :
-                                if (player.getSkillOne().getName().equals("Sword") || player.getGold() < 10) {
+                                if (player.getSkillOne().getName().equals("Sword") || player.getGold() < 10 || player.getArchetype().equals("Mage")) {
                                     System.out.println("You can't buy it.");
                                 } else {
                                     player.setSkillOne(new Weapon("Sword"));
@@ -66,7 +67,7 @@ public class Town extends Dungeon {
                                 }
                                 break;
                             case 2 :
-                                if (player.getSkillOne().getName().equals("Mace") || player.getGold() < 5) {
+                                if (player.getSkillOne().getName().equals("Mace") || player.getGold() < 5 || player.getArchetype().equals("Mage")) {
                                     System.out.println("You can't buy it.");
                                 } else {
                                     player.setSkillOne(new Weapon("Mace"));
@@ -77,10 +78,26 @@ public class Town extends Dungeon {
                                 }
                                 break;
                             case 3 :
-                                System.out.println("You can't buy it. There's nothing around here.");
+                                if (player.getSkillTwo().getName().equals("Lightning Bolt") || player.getGold() < 5 || player.getArchetype().equals("Warrior")) {
+                                    System.out.println("You can't buy it.");
+                                } else {
+                                    player.setSkillTwo(new Spell("Lightning Bolt"));
+                                    player.setGold(player.getGold() - 5);
+                                    System.out.println("Seller : - Nice choice.");
+                                    System.out.println("You learn Lightning Bolt");
+                                    System.out.println(player.getName() + " Gold : " + player.getGold());
+                                }
                                 break;
                             case 4 :
-                                System.out.println("You can't buy it. No... Nothing here...");
+                                if (player.getSkillFour().getName().equals("Fireball") || player.getGold() < 10 || player.getArchetype().equals("Warrior")) {
+                                    System.out.println("You can't buy it.");
+                                } else {
+                                    player.setSkillTwo(new Spell("Fireball"));
+                                    player.setGold(player.getGold() - 10);
+                                    System.out.println("Seller : - Nice choice.");
+                                    System.out.println("You learn Fireball");
+                                    System.out.println(player.getName() + " Gold : " + player.getGold());
+                                }
                                 break;
                             case 9 :
                                 getCharacterSheet().paperSheet(player);
