@@ -8,13 +8,16 @@ import ui.Room;
 import java.util.Scanner;
 
 public class DungeonVar extends Dungeon {
-//TODO fix the constructors
-    public DungeonVar() {
-        //super();
-    }
 
-    public DungeonVar(Utils utils, CharacterSheet characterSheet, Scanner sc, int controllerChoiceInt, String controllerChoiceString, int N, Room room ) {
-        //super();
+    boolean event1;
+    boolean event2;
+    boolean event3;
+
+    public DungeonVar() {
+        super();
+        this.event1 = true;
+        this.event2 = true;
+        this.event3 = true;
     }
 
     @Override
@@ -56,10 +59,9 @@ public class DungeonVar extends Dungeon {
                             getSc());
                     int diceResult = getUtils().rollDice(6);
                     player.setWorldLocation(player.getWorldLocation() + diceResult);
-                    getRoom().roomRand(player, this, "");
-/*
+
             Character empty = new Character();
-            switch (player1.getWorldLocation()) {
+            switch (player.getWorldLocation()) {
                 case 1:
                 case 2:
                 case 3:
@@ -67,11 +69,16 @@ public class DungeonVar extends Dungeon {
                 case 5:
                 case 6:
                 case 7:
-                    setRoomArchetype("Enemy");
-                    setRoomTitle("Entrance ");
-                    Character gobelin = new Character("Gobelin", "Bazakarak", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
-                    Room room1 = new Room();
-                    room1.roomRP(player1, gobelin, this, "Stinky place... Gobelin : - Koup koup touwa !");
+                    if (event1) {
+                        setRoomArchetype("Enemy");
+                        setRoomTitle("Entrance ");
+                        Character gobelin = new Character("Gobelin", "Bazakarak", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
+                        Room room1 = new Room();
+                        room1.roomRP(player, gobelin, this, "Stinky place... Gobelin : - Koup koup touwa !");
+                        event1 = false;
+                    } else {
+                        defaultRoom(player, empty);
+                    }
                     break;
                 case 8:
                 case 9:
@@ -79,28 +86,35 @@ public class DungeonVar extends Dungeon {
                 case 11:
                 case 12:
                 case 13:
-                    setRoomArchetype("Corridor");
-                    setRoomTitle("Corridor to Armory ");
-                    Room room2 = new Room();
-                    room2.roomRP(player1, empty, this, "You ear something strange... : 'WArEwlwLwlwLwLEee !'");
+                    if (event2) {
+                        setRoomArchetype("Corridor");
+                        setRoomTitle("Corridor to Armory ");
+                        Room room2 = new Room();
+                        room2.roomRP(player, empty, this, "You ear something strange... : 'WArEwlwLwlwLwLEee !'");
+                        event2 = false;
+                    } else {
+                        defaultRoom(player, empty);
+                    }
                     break;
                 case 14:
                 case 15:
                 case 16:
                 case 17:
                 case 18:
-                    setRoomArchetype("Enemy");
-                    setRoomTitle("Armory ");
-                    Character gobelin1 = new Character("Gobelin", "Kazazouille", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
-                    Room room3 = new Room();
-                    room3.roomRP(player1, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
+                    if (event3) {
+                        setRoomArchetype("Enemy");
+                        setRoomTitle("Armory ");
+                        Character gobelin1 = new Character("Gobelin", "Kazazouille", 6, 6, 1, 1, "Gobwin dawggewr", "Wrock throw", "Rwun Waway", "Whelp", 3, 0);
+                        Room room3 = new Room();
+                        room3.roomRP(player, gobelin1, this, "A Goblin is bashing another one lay on the ground. He doesn't see you yet.");
+                        event3 = false;
+                    } else {
+                        defaultRoom(player, empty);
+                    }
                     break;
                 default:
-                    setRoomArchetype("Corridor");
-                    setRoomTitle("Corridor ");
-                    Room room = new Room();
-                    room.roomRP(player1, empty, this, "");
-            }*/
+                    defaultRoom(player, empty);
+            }
         }
 
         player.setWorldLocation(getN());
@@ -116,6 +130,7 @@ public class DungeonVar extends Dungeon {
         if (player.getHp() > 0) {
             System.out.println("You raid the Dungeon succefully");
         }
+        setControllerChoiceInt(999);
         System.out.println(" ");
         System.out.println("             -----------                         ----------                  ");
         System.out.println("            | Restart > |                       |  Quit >  |                 ");
@@ -136,20 +151,35 @@ public class DungeonVar extends Dungeon {
             }
         }
     }
-    /*
-    public String getRoomArchetype() {
-        return roomArchetype;
+
+    public void defaultRoom(Character player, Character empty) {
+        setRoomArchetype("Corridor");
+        setRoomTitle("Corridor ");
+        Room room = new Room();
+        room.roomRP(player, empty, this, "");
     }
 
-    public void setRoomArchetype(String roomArchetype) {
-        this.roomArchetype = roomArchetype;
+    public boolean isEvent1() {
+        return event1;
     }
 
-    public String getRoomTitle() {
-        return roomTitle;
+    public void setEvent1(boolean event1) {
+        this.event1 = event1;
     }
 
-    public void setRoomTitle(String roomTitle) {
-        this.roomTitle = roomTitle;
-    }*/
+    public boolean isEvent2() {
+        return event2;
+    }
+
+    public void setEvent2(boolean event2) {
+        this.event2 = event2;
+    }
+
+    public boolean isEvent3() {
+        return event3;
+    }
+
+    public void setEvent3(boolean event3) {
+        this.event3 = event3;
+    }
 }

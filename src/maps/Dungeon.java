@@ -31,16 +31,6 @@ public class Dungeon {
         this.room = new Room();
     }
 
-    public Dungeon(Utils utils, CharacterSheet characterSheet, Scanner sc, int controllerChoiceInt, String controllerChoiceString, int N, Room room ) {
-        this.utils = utils;
-        this.characterSheet = characterSheet;
-        this.sc = sc;
-        this.controllerChoiceInt = controllerChoiceInt;
-        this.controllerChoiceString = controllerChoiceString;
-        this.N = 19;
-        this.room = room;
-    }
-
     public Utils getUtils() {
         return utils;
     }

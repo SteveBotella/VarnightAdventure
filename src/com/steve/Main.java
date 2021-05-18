@@ -22,7 +22,7 @@ public class Main {
         Game game = new Game(15, 7, 3, 5, 5, 5, 5, 5, 5, 9 );
 
         player1 = menu.start();
-        //level1.gameStart(player1);
-        game.gameStart(player1);
+        level1.gameStart(player1);
+        //game.gameStart(player1);
     }
 }

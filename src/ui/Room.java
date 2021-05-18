@@ -20,7 +20,7 @@ public class Room {
         this.characterSheet = new CharacterSheet();
     }
 
-    //Story room
+    // Story room
     public void roomRP(Character player, Character enemy, DungeonVar dungeonVar, String description) {
         System.out.println("     --- " + dungeonVar.getRoomTitle() + " " + ( player.getWorldLocation() + 1) +"  ---     ");
         System.out.println("     " + description + "     ");
