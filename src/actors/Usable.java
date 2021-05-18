@@ -59,6 +59,8 @@ public class Usable {
      */
     private String useText;
 
+    private String itemEffect;
+
     /**
      * Base constructor
      */
@@ -89,6 +91,15 @@ public class Usable {
                 enemy.setHp(enemy.getHp() - damageRange);
                 break;
             case "health":
+                System.out.println(player.getName() + useText + usable.getName());
+                System.out.println(player.getName() + " rest " + usable.healthBonus + " HP ");
+                player.setHp(player.getHp() + usable.healthBonus);
+                if (player.getHp() > player.getMaxHp()) {
+                    player.setHp(player.getMaxHp());
+                }
+                break;
+            case "mana" :
+                System.out.println("mana");
                 System.out.println(player.getName() + useText + usable.getName());
                 System.out.println(player.getName() + " rest " + usable.healthBonus + " HP ");
                 player.setHp(player.getHp() + usable.healthBonus);
@@ -162,5 +173,13 @@ public class Usable {
 
     public void setUseText(String useText) {
         this.useText = useText;
+    }
+
+    public String getItemEffect() {
+        return itemEffect;
+    }
+
+    public void setItemEffect(String itemEffect) {
+        this.itemEffect = itemEffect;
     }
 }

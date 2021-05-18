@@ -20,13 +20,12 @@ public class DungeonVar extends Dungeon {
         this.event3 = true;
     }
 
-    @Override
     public void gameStart(Character player) {
         player.setWorldLocation(0);
 
         getUtils().waitSec(3, true, true);
         getUtils().storyText("-----     CHAPTER I     -----",
-                        "-----    Dungeon Var    -----",
+                             "-----    Dungeon Var    -----",
                         player,
                         getCharacterSheet(),
                         getControllerChoiceInt(),
@@ -119,7 +118,7 @@ public class DungeonVar extends Dungeon {
 
         player.setWorldLocation(getN());
 
-        Character boss = new Character("Orc Chief", "Zoruk", 12, 12, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry", 10, 2);
+        Character boss = new Character("Orc Chief", "Zoruk", 9, 9, 2, 2, "Heavy axe", "Shield Bash", "Axe throw", "Battle Cry", 10, 2);
 
         setRoomArchetype("Enemy");
         setRoomTitle("Dungeon Master ");
@@ -129,7 +128,10 @@ public class DungeonVar extends Dungeon {
         player.setWorldLocation(getN());
         if (player.getHp() > 0) {
             System.out.println("You raid the Dungeon succefully");
+            Town town = new Town();
+            town.gameStart(player);
         }
+        /*
         setControllerChoiceInt(999);
         System.out.println(" ");
         System.out.println("             -----------                         ----------                  ");
@@ -149,7 +151,7 @@ public class DungeonVar extends Dungeon {
                     getCharacterSheet().paperSheet(player);
                     break;
             }
-        }
+        }*/
     }
 
     public void defaultRoom(Character player, Character empty) {

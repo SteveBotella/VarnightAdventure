@@ -18,20 +18,24 @@ public class Item extends Usable {
             case "Health Potion" :
                 setHealthBonus(2);
                 setUseText(" drink ");
+                setItemEffect("health");
                 break;
             case "Health Medium Potion" :
                 setHealthBonus(5);
                 setUseText(" drink ");
+                setItemEffect("health");
                 break;
             case "Mana Potion" :
                 setDamageBonus(4);
                 setDamageMin((2));
                 setUseText(" drink ");
+                setItemEffect("mana");
                 break;
             default:
                 setDamageBonus(0);
                 setDamageMin((0));
                 setUseText(" hit the target with ");
+                setItemEffect("damage");
         }
     }
 }

@@ -74,16 +74,16 @@ public class Room {
             this.skillChoice = sc.nextInt();
             switch (skillChoice) {
                 case 1 :
-                    player.getSkillOne().itemEvent("damage", player, enemy, player.getSkillOne(), utils);
+                    player.getSkillOne().itemEvent(player.getSkillOne().getItemEffect(), player, enemy, player.getSkillOne(), utils);
                     break;
                 case 2 :
-                    player.getSkillTwo().itemEvent("damage", player, enemy, player.getSkillTwo(), utils);
+                    player.getSkillTwo().itemEvent(player.getSkillTwo().getItemEffect(), player, enemy, player.getSkillTwo(), utils);
                     break;
                 case 3 :
-                    player.getSkillThree().itemEvent("damage", player, enemy, player.getSkillThree(), utils);
+                    player.getSkillThree().itemEvent(player.getSkillThree().getItemEffect(), player, enemy, player.getSkillThree(), utils);
                     break;
                 case 4 :
-                    player.getSkillFour().itemEvent("health",player, enemy, player.getSkillFour(), utils);
+                    player.getSkillFour().itemEvent(player.getSkillFour().getItemEffect(), player, enemy, player.getSkillFour(), utils);
                     break;
             }
             characterSheet.paperSheet(enemy);

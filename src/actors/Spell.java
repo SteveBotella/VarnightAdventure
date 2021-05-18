@@ -19,21 +19,25 @@ public class Spell extends Usable {
                 setDamageBonus(6);
                 setDamageMin((4));
                 setUseText(" burn the target with ");
+                setItemEffect("damage");
                 break;
             case "Lightning Bolt" :
                 setDamageBonus(4);
                 setDamageMin((2));
                 setUseText(" blast the target with ");
+                setItemEffect("damage");
                 break;
             case "Shield Bash" :
                 setDamageBonus(2);
                 setDamageMin((1));
                 setUseText(" push the target with ");
+                setItemEffect("damage");
                 break;
             case "Axe throw" :
                 setDamageBonus(4);
                 setDamageMin((2));
                 setUseText(" throw axe to the target with ");
+                setItemEffect("damage");
                 break;
             case "Battle Cry" :
                 setDamageBonus(0);
@@ -44,6 +48,7 @@ public class Spell extends Usable {
                 setDamageBonus(0);
                 setDamageMin((0));
                 setUseText(" throw rock to the target with ");
+                setItemEffect("damage");
                 break;
             case "Rwun Waway" :
                 setDamageBonus(0);
@@ -59,6 +64,7 @@ public class Spell extends Usable {
                 setDamageBonus(0);
                 setDamageMin((0));
                 setUseText(" hit the target with ");
+                setItemEffect("damage");
         }
     }
 }

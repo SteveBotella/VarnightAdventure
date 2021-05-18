@@ -145,30 +145,12 @@ public class Game {
     public void gameStart(Character player) {
         player.setWorldLocation(0);
         utils.waitSec(3, true, true);
-        utils.storyText("-----     CHAPTER I     -----",
-                "-----    Dungeon Var    -----",
+        utils.storyText("-----     EXPLORATION     -----",
+                        "-----     Wasted Land     -----",
                 player,
                 characterSheet,
                 controllerChoiceInt,
                 sc);
-
-        utils.waitSec(1, false, false);
-        utils.storyText("After many days traveling across the dangerous forest, the lost villages",
-                "and enjoy your rest in 'lovely' Inn...",
-                player,
-                characterSheet,
-                controllerChoiceInt,
-                sc);
-
-        utils.storyText("You prepare yourself to enter...",
-                "!!! The Dungeon Var - No one been return !!!",
-                player,
-                characterSheet,
-                controllerChoiceInt,
-                sc);
-
-        System.out.println("The sun is falling, night is coming, a cold wind run into your clothes");
-        System.out.println("TAn abandoned Castle is front of you. It stink monsters... Or cheese maybe.");
 
         utils.storyText("You are in level " + (player.getWorldLocation() + 1),
                 "(Roll the dice to move your character inside the dungeon)",
@@ -177,11 +159,11 @@ public class Game {
                 controllerChoiceInt,
                 sc);
 
-        while (player.getWorldLocation() < (this.cases.size()) && player.getHp() > 0) {
+        while (player.getWorldLocation() < (this.cases.size() - 1) && player.getHp() > 0) {
             int diceResult = utils.rollDice(6);
             player.setWorldLocation(player.getWorldLocation() + diceResult);
-            if (player.getWorldLocation() > this.cases.size()) {
-                player.setWorldLocation(this.cases.size());
+            if (player.getWorldLocation() > (this.cases.size() - 1)) {
+                player.setWorldLocation(this.cases.size() - 1);
             }
             cases.get(player.getWorldLocation()).run(player);
             utils.storyText("You are in level " + (player.getWorldLocation() + 1),
@@ -193,28 +175,9 @@ public class Game {
         }
 
         if (player.getHp() > 0) {
-            System.out.println("You raid the Dungeon succefully");
-        }
-        controllerChoiceInt = 999;
-        System.out.println(" ");
-        System.out.println("             -----------                         ----------                  ");
-        System.out.println("            | Restart > |                       |  Quit >  |                 ");
-        System.out.println("             -----------                         ----------                  ");
-        System.out.println("             1 (Numpad)                          2 (Numpad)                  ");
-        while (controllerChoiceInt != 1 && controllerChoiceInt != 2) {
-            this.controllerChoiceInt = sc.nextInt();
-            switch (controllerChoiceInt) {
-                case 1:
-                    player.setWorldLocation(0);
-                    gameStart(player);
-                    break;
-                case 2:
-                    System.out.println("Leaving game...");
-                    break;
-                case 9:
-                    characterSheet.paperSheet(player);
-                    break;
-            }
+            System.out.println("You explored all the area. Back to the town");
+            Town town = new Town();
+            town.gameStart(player);
         }
     }
 }
