@@ -1,7 +1,8 @@
 package ui;
 
-import actors.*;
 import actors.Character;
+import actors.*;
+import com.steve.DataBase;
 import tools.Utils;
 
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public class Menu {
     private Boolean scB;
 
     private Utils utils;
+    private DataBase dataBase;
 
     private Character player1;
     private CharacterSheet characterSheet;
@@ -25,6 +27,7 @@ public class Menu {
         this.player1 = new Character();
         this.characterSheet = new CharacterSheet();
         this.scB = false;
+        this.dataBase = new DataBase();
     }
 
     // Use to display the menu
@@ -96,6 +99,7 @@ public class Menu {
                 System.out.println("     Here comes... The WARRIOR !!!                                              ");
                 System.out.println("     We call him :                                                              ");
                 System.out.println("               --- " + player1.getName() + " !!! ---                            ");
+                dataBase.saveHero(player1);
 
             } else if (controllerChoiceInt == 2) {
                 player1 = new Mage();

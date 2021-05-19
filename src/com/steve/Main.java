@@ -5,6 +5,8 @@ import maps.DungeonVar;
 import maps.Game;
 import ui.Menu;
 
+import java.sql.SQLException;
+
 /**
  * Manage the application & call classes
  *
@@ -14,8 +16,11 @@ import ui.Menu;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Menu menu = new Menu();
+        DataBase database = new DataBase();
+
+        database.showAllHeroes();
 
         Character player1 = null;
         DungeonVar level1 = new DungeonVar();
