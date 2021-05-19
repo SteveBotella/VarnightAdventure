@@ -1,12 +1,8 @@
 package ui;
 
 import actors.Character;
-import tools.Utils;
-import ui.CharacterSheet;
 
-import java.util.Scanner;
-
-public class Sorcerer extends Case {
+public class Sorcerer extends CaseEnemy {
     Character enemy;
 
     public Sorcerer() {

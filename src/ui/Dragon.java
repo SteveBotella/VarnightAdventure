@@ -1,12 +1,8 @@
 package ui;
 
 import actors.Character;
-import tools.Utils;
-import ui.CharacterSheet;
 
-import java.util.Scanner;
-
-public class Dragon extends Case {
+public class Dragon extends CaseEnemy {
     Character enemy;
 
     public Dragon() {

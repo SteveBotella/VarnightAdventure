@@ -10,6 +10,7 @@ public class Menu {
     private Scanner sc;
     private int controllerChoiceInt;
     private String controllerChoiceString;
+    private Boolean scB;
 
     private Utils utils;
 
@@ -23,6 +24,7 @@ public class Menu {
         this.controllerChoiceString = "";
         this.player1 = new Character();
         this.characterSheet = new CharacterSheet();
+        this.scB = false;
     }
 
     // Use to display the menu
@@ -43,7 +45,17 @@ public class Menu {
         System.out.println("     | Create a New Character |     | Quit Game |      ");
         System.out.println("      ------------------------       -----------       ");
         System.out.println("            1 (Numpad)               2 (Numpad)        ");
-        controllerChoiceInt = sc.nextInt();
+        boolean inputNotNull = true;
+        while (inputNotNull) {
+            try {
+                controllerChoiceInt = sc.nextInt();
+                inputNotNull = false;
+            }
+            catch (Exception e) {
+                System.out.println("Choose an answer");
+                sc.nextLine();
+            }
+        }
         System.out.println();
         if (controllerChoiceInt == 1) {
             utils.waitSec(1, false, false);

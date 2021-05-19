@@ -1,12 +1,8 @@
 package ui;
 
 import actors.Character;
-import tools.Utils;
-import ui.CharacterSheet;
 
-import java.util.Scanner;
-
-public class Gobelin extends Case {
+public class Gobelin extends CaseEnemy {
 
     Character enemy;
 
