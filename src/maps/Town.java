@@ -2,13 +2,7 @@ package maps;
 
 import actors.Character;
 import actors.Spell;
-import actors.Warrior;
 import actors.Weapon;
-import tools.Utils;
-import ui.CharacterSheet;
-import ui.Room;
-
-import java.util.Scanner;
 
 public class Town extends Dungeon {
 
@@ -18,6 +12,7 @@ public class Town extends Dungeon {
 
     public void gameStart(Character player) {
         player.setWorldLocation(0);
+        getDataBase().saveUpdateHero(player);
 
         getUtils().storyText("-----     THE TOWN     -----",
                              "-----  Peaceful Place  -----",

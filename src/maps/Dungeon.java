@@ -1,6 +1,7 @@
 package maps;
 
 import actors.Character;
+import com.steve.DataBase;
 import tools.Utils;
 import ui.CharacterSheet;
 import ui.Room;
@@ -21,6 +22,8 @@ public class Dungeon {
     private String roomArchetype = "Corridor";
     private String roomTitle = "empty";
 
+    private DataBase dataBase;
+
     public Dungeon() {
         this.utils = new Utils();
         this.characterSheet = new CharacterSheet();
@@ -29,6 +32,7 @@ public class Dungeon {
         this.controllerChoiceString = "";
         this.N = 19;
         this.room = new Room();
+        this.dataBase = new DataBase();
     }
 
     public Utils getUtils() {
@@ -104,5 +108,13 @@ public class Dungeon {
     }
 
     public void gameStart(Character player1) {
+    }
+
+    public DataBase getDataBase() {
+        return dataBase;
+    }
+
+    public void setDataBase(DataBase dataBase) {
+        this.dataBase = dataBase;
     }
 }

@@ -99,7 +99,7 @@ public class Menu {
                 System.out.println("     Here comes... The WARRIOR !!!                                              ");
                 System.out.println("     We call him :                                                              ");
                 System.out.println("               --- " + player1.getName() + " !!! ---                            ");
-                dataBase.saveHero(player1);
+                dataBase.saveCreateHero(player1);
 
             } else if (controllerChoiceInt == 2) {
                 player1 = new Mage();

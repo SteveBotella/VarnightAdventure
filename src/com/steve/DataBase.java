@@ -33,11 +33,35 @@ public class DataBase {
         }
     }
 
-    public void saveHero(Character player) {
+    public void saveCreateHero(Character player) {
         try {
-                statement.executeUpdate( "INSERT INTO players (archetype, name, ap) " +
-                " VALUES ('" + player.getArchetype() + "', '" + player.getName() + "', '" + player.getAp() + "');",
+                statement.executeUpdate( "INSERT INTO players (archetype, name, hp, maxHp, ap, maxAp, skillOne, skillTwo, skillThree, skillFour, gold, minGold) " +
+                " VALUES ('" + player.getArchetype() + "', '" + player.getName() + "', '" + player.getHp() + "', '" + player.getMaxHp() + "', '" + player.getAp() + "', '" + player.getMaxAp() + "', '" + player.getSkillOne() + "', '" + player.getSkillTwo() + "', '" + player.getSkillThree() + "', '" + player.getSkillFour() + "', '" + player.getGold() + "', '" + player.getMinGold() + "');",
                 Statement.RETURN_GENERATED_KEYS);
+        }
+        catch (SQLException e) {
+            System.out.println("There's nothing around here");
+        }
+    }
+
+    public void saveUpdateHero(Character player) {
+        try {
+            statement.executeUpdate( "UPDATE players SET archetype = '" + player.getArchetype() + "', hp = '" + player.getHp() + "', maxHp = '" + player.getMaxHp() + "', ap = '" + player.getAp() + "', maxAp = '" + player.getMaxAp() + "', skillOne = '" + player.getSkillOne() + "', skillTwo = '" + player.getSkillTwo() + "', skillThree = '" + player.getSkillThree() + "', skillFour = '" + player.getSkillFour() + "' WHERE name = '" + player.getName() + "'");
+        }
+        catch (SQLException e) {
+            System.out.println("There's nothing around here");
+        }
+    }
+
+    public void loadHero(Character player) {
+        try {
+            resultset = statement.executeQuery("SELECT '" + player.getName() + "' FROM players");
+                player.setArchetype(resultset.getString("archetype"));
+                player.setHp(resultset.getInt("hp"));
+                player.setMaxHp(resultset.getInt("maxHp"));
+                player.setAp(resultset.getInt("ap"));
+                player.setMaxAp(resultset.getInt("maxAp"));
+                player.getSkillOne().setName(resultset.getString("skillOne"));
         }
         catch (SQLException e) {
             System.out.println("There's nothing around here");
