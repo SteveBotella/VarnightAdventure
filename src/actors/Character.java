@@ -6,7 +6,7 @@ package actors;
  * @see Warrior
  * @see Mage
  */
-public class Character {
+public class Character implements Npc {
 
     /**
      * Equip weapon in this slot
@@ -239,5 +239,10 @@ public class Character {
 
     public void setMinGold(int minGold) {
         this.minGold = minGold;
+    }
+
+    @Override
+    public boolean isNpc() {
+        return true;
     }
 }

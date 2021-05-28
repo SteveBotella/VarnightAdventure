@@ -1270,10 +1270,19 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="350" parent="336" name="PRIMARY">
+    <index id="350" parent="336" name="name">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+      <Type>hash</Type>
+    </index>
+    <key id="351" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
+    </key>
+    <key id="352" parent="336" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

@@ -6,7 +6,7 @@ package actors;
  *
  * @see Character
  */
-public class Warrior extends Character {
+public class Warrior extends Character implements Npc {
 
     /**
      * Use this constructor to create a base Warrior
@@ -24,5 +24,10 @@ public class Warrior extends Character {
                 "Bare Hands",
                 0,
                 0);
+    }
+
+    @Override
+    public boolean isNpc() {
+        return false;
     }
 }

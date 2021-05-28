@@ -6,7 +6,7 @@ package actors;
  *
  * @see Character
  */
-public class Mage extends Character {
+public class Mage extends Character implements Npc {
 
     /**
      * Use this constructor to create a base Mage
@@ -24,5 +24,10 @@ public class Mage extends Character {
                 "Bare Hands",
                 0,
                 0);
+    }
+
+    @Override
+    public boolean isNpc() {
+        return false;
     }
 }

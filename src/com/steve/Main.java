@@ -1,6 +1,7 @@
 package com.steve;
 
 import actors.Character;
+import actors.Npc;
 import maps.DungeonVar;
 import maps.Game;
 import ui.Menu;
@@ -27,6 +28,18 @@ public class Main {
         Game game = new Game(15, 7, 3, 5, 5, 5, 5, 5, 5, 9 );
 
         player1 = menu.start();
+        if (player1 instanceof Npc) {
+            String isNpc;
+            if (player1.isNpc()) {
+                isNpc = "NPC";
+            } else {
+                isNpc = "Player";
+            }
+            System.out.println("You are a " + isNpc + " Character");
+
+        } else {
+            System.out.println("You are not a Character");
+        }
         level1.gameStart(player1);
     }
 }
