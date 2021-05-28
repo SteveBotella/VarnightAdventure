@@ -131,6 +131,7 @@ public class Menu {
                 System.out.println("     Here comes... The Mage !!!                                              ");
                 System.out.println("     We call him :                                                              ");
                 System.out.println("               --- " + player1.getName() + " !!! ---                            ");
+                dataBase.saveCreateHero(player1);
             }
 
             System.out.println("     (Now you can use the 9 Numpad input to display your Character Sheet         ");

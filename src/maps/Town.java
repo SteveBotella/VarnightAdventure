@@ -3,6 +3,7 @@ package maps;
 import actors.Character;
 import actors.Spell;
 import actors.Weapon;
+import com.steve.DataBase;
 
 public class Town extends Dungeon {
 
@@ -101,6 +102,7 @@ public class Town extends Dungeon {
                         }
                     }
                     System.out.println("Leaving Shop");
+                    dataBase.saveCreateHero(player);
                     getUtils().waitSec(3,false, true);
                     this.gameStart(player);
                     break;

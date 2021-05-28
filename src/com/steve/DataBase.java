@@ -32,7 +32,7 @@ public class DataBase {
             System.out.println("There's nothing around here");
         }
     }
-
+//TODO Prepared Statement
     public void saveCreateHero(Character player) {
         try {
                 statement.executeUpdate( "INSERT INTO players (archetype, name, hp, maxHp, ap, maxAp, skillOne, skillTwo, skillThree, skillFour, gold, minGold) " +
